@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
+    'home',
+    'authentication',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -48,8 +50,9 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-# TODO: Change with your own npm bin path
-NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
+# Windows: Change with your npm bin path
+# MacOS: Turn it off
+# NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
