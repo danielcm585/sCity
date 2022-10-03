@@ -51,7 +51,7 @@ INTERNAL_IPS = [
 ]
 
 # Windows: Change with your npm bin path
-# MacOS: Turn it off
+# Mac/Linux: Turn it off
 # NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
 
 MIDDLEWARE = [
