@@ -1,3 +1,3 @@
 release: sh -c 'python manage.py migrate'
 
-web: gunicorn p\roject_django.wsgi --log-file -
+web: gunicorn tugas_tengah_semester.wsgi --log-file -
