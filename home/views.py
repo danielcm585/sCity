@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-    print("HELO")
-    return render(request, "home.html")
+    context = {
+        'last_login': request.COOKIES.get('last_login')
+    }
+    return render(request, "home.html", context)

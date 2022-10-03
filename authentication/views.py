@@ -31,7 +31,7 @@ def register_user(request):
             messages.success(request, "Akun telah berhasil dibuat!")
             return redirect("authentication:login")
     
-    context = { "form":form }
+    context = { "form": form }
     return render(request, "register.html", context)
 
 def logout_user(request):
