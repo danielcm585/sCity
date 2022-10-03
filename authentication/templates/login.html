@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="mt-40 flex justify-center">
+  <div class="w-80 p-10 rounded-md shadow-xl">
+    <form method="POST" action="">
+      {% csrf_token %}
+      <h1 class="text-4xl text-emerald-400 font-bold">
+        Login
+      </h1>
+      <h1 class="mt-8">
+        Username
+      </h1>
+      <input type="text" name="username" class="mt-2 w-full rounded-md">
+      <h1 class="mt-4">
+        Password
+      </h1>
+      <input type="password" name="password" class="mt-2 w-full rounded-md">
+      <button type="submit" class="mt-8 px-4 py-2 bg-emerald-400 rounded-md text-white text-xl">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

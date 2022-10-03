@@ -44,8 +44,8 @@
 					{% endfor %}
 				</div>
 			{% endif %}
-			<nav id="navbar" class="py-3 px-6 bg-emerald-400">
-				<div class="flex justify-between">
+			<nav id="navbar" class="py-3 px-6 xl:px-60 bg-emerald-400">
+				<div class="flex justify-between items-center">
 					<h1 class="text-white text-3xl font-extrabold">
 						[APP_NAME]
 					</h1>
@@ -55,26 +55,26 @@
 				</div>
 			</nav>
 			<div id="drawer" class="fixed inset-y-0 right-[-100vw] z-40 h-screen w-[100vw] backdrop-blur-md bg-white/30 duration-300">
-				<div class="flex justify-between mt-3 mr-6">
+				<div class="flex justify-between mt-3 mx-6 xl:mx-60">
 					<div></div>
 					<button type="button" class="transition ease-in-out hover:scale-110" onclick="closeMenu()">
 						<?xml version="1.0" ?><svg viewBox="0 0 30 30" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>
 					</button>
 				</div>
-				<div class="px-40 py-20">
+				<div class="ml-20 xl:ml-60 mt-20 mr-6 xl:mr-60">
 					{% if last_login %}
 						
 					{% else %}
 						<div>
 							<a href="/authentication/login">
-								<h1 class="text-3xl font-bold">
+								<h1 class="text-3xl font-bold text-emerald-400">
 									Login
 								</h1>
 							</a>
 						</div>
 						<div class="mt-6">
 							<a href="/authentication/register">
-								<h1 class="text-3xl font-bold">
+								<h1 class="text-3xl font-bold text-emerald-400">
 									Register
 								</h1>
 							</a>

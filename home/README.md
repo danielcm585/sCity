@@ -3,7 +3,7 @@
 ## How to run locally?
 ---
 
-### Create your virtual environment
+### Create virtual environment
 ```
 python -m venv env
 ```
@@ -22,9 +22,13 @@ python manage.py runserver
 ---
 
 ### Install node.js' npm
-- For mac/linux:
+- For mac:
   ```
   brew install node
+  ```
+- For linux:
+  ```
+  sudo apt install npm
   ```
 - For windows visit [this site](https://nodejs.org/en/download/)
 
