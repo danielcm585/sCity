@@ -15,7 +15,7 @@
 	<body>
 		<div class="relative">
 			{% if messages %}
-				<div id="message" class="absolute right-0">
+				<div id="message" class="absolute top-16 right-4">
 					{% for message in messages %}
 						{% if message.tags == 'success' %}
 							<div class="mt-10 mr-2 flex items-center rounded-md bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
@@ -44,18 +44,36 @@
 					{% endfor %}
 				</div>
 			{% endif %}
-			<nav id="navbar" class="py-3 px-6 xl:px-60 bg-emerald-400">
-				<div class="flex justify-between items-center">
-					<h1 class="text-white text-3xl font-extrabold">
-						[APP_NAME]
-					</h1>
-					<button type="button" onclick="openMenu()">
+			<nav id="navbar" class="py-3 px-6 xl:px-60 bg-emerald-400 flex justify-center">
+				<div class="w-full lg:w-11/12 xl:w-full flex justify-between items-center">
+					<a href="/">
+						<h1 class="text-white text-3xl font-extrabold">
+							[APP_NAME]
+						</h1>
+					</a>
+					<button type="button" onclick="openMenu()" class="xl:hidden">
 						<?xml version="1.0" ?><svg fill="none" height="40" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
 					</button>
+					<div class="hidden xl:flex">
+						<div>
+							<a href="/authentication/login">
+								<h1 class="text-xl font-bold text-white">
+									Login
+								</h1>
+							</a>
+						</div>
+						<div class="ml-8">
+							<a href="/authentication/register">
+								<h1 class="text-xl font-bold text-white">
+									Register
+								</h1>
+							</a>
+						</div>
+					</div>
 				</div>
 			</nav>
 			<div id="drawer" class="fixed inset-y-0 right-[-100vw] z-40 h-screen w-[100vw] backdrop-blur-md bg-white/30 duration-300">
-				<div class="flex justify-between mt-3 mx-6 xl:mx-60">
+				<div class="lg:w-11/12 mt-3 mx-6 xl:mx-60 flex justify-between">
 					<div></div>
 					<button type="button" class="transition ease-in-out hover:scale-110" onclick="closeMenu()">
 						<?xml version="1.0" ?><svg viewBox="0 0 30 30" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>

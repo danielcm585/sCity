@@ -1,9 +1,7 @@
 const toggleShowPassword = (e) => {
-  console.log('HERE')
-
-  let passwordInput = document.getElementById('password-input')
-  let eye = document.getElementById('eye')
-  let eyeSlash = document.getElementById('eye-slash')
+  const passwordInput = document.getElementById('password-input')
+  const eye = document.getElementById('eye')
+  const eyeSlash = document.getElementById('eye-slash')
   
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text'
