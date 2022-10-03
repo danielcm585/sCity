@@ -1,5 +1,7 @@
 # [APP_NAME]
 
+App can be access [here](https://pbp-smart-city.herokuapp.com/)
+
 Smart city is a new concept of a city that we frequntly hear about. The concept is all about digitalizing all kind of activities held in a city. The actual purpose of smart city is to create a city that is smart enough to recognize all kinds of events that happen in a city. These are the main pillar of smart city.
 
 - Smart environment
