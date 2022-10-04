@@ -950,6 +950,10 @@ select {
   width: 83.333333%;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .max-w-xs {
   max-width: 20rem;
 }
@@ -1213,6 +1217,11 @@ select {
 
   .lg\:justify-evenly {
     justify-content: space-evenly;
+  }
+
+  .lg\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   }
 
   .lg\:px-20 {
