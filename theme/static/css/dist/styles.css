@@ -804,6 +804,10 @@ select {
   right: 1rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .right-\[-100vw\] {
   right: -100vw;
 }
@@ -812,8 +816,8 @@ select {
   right: 0.5rem;
 }
 
-.top-0 {
-  top: 0px;
+.right-0 {
+  right: 0px;
 }
 
 .z-40 {
@@ -894,32 +898,12 @@ select {
   margin-top: 3rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
-}
-
-.mt-14 {
-  margin-top: 3.5rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .mt-28 {
   margin-top: 7rem;
 }
 
-.mb-20 {
-  margin-bottom: 5rem;
-}
-
-.mt-60 {
-  margin-top: 15rem;
+.mt-40 {
+  margin-top: 10rem;
 }
 
 .block {
@@ -962,20 +946,8 @@ select {
   width: 100vw;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-4\/5 {
-  width: 80%;
-}
-
 .w-5\/6 {
   width: 83.333333%;
-}
-
-.w-11\/12 {
-  width: 91.666667%;
 }
 
 .max-w-xs {
@@ -1006,24 +978,20 @@ select {
   justify-content: space-between;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .rounded-full {
   border-radius: 9999px;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+.border-2 {
+  border-width: 2px;
 }
 
 .border {
   border-width: 1px;
-}
-
-.border-2 {
-  border-width: 2px;
 }
 
 .border-l-4 {
@@ -1074,38 +1042,6 @@ select {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.bg-green-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
-}
-
-.bg-emerald-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(167 243 208 / var(--tw-bg-opacity));
-}
-
-.bg-emerald-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 250 229 / var(--tw-bg-opacity));
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1141,20 +1077,12 @@ select {
   padding-right: 2rem;
 }
 
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
 .text-center {
   text-align: center;
 }
 
 .text-right {
   text-align: right;
-}
-
-.text-end {
-  text-align: end;
 }
 
 .font-serif {
@@ -1174,16 +1102,6 @@ select {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-extrabold {
