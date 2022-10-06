@@ -4,8 +4,8 @@
 {% block content %}
 
 <div>
-  <div class="flex justify-center">
-    <div class="mt-20 w-5/6">
+  <div class="flex justify-center" data-aos="fade-up">
+    <div class="mt-40 w-5/6">
       <h1 class="text-5xl text-center font-extrabold">
         Your smart city best partner.
       </h1>
@@ -13,27 +13,27 @@
         [APP_NAME] is a web application that allows you to manage your smart city life that provides tons of services you can use to level up your smart life.
       </h2>
       <div class="mt-10 w-full flex justify-center">
-        <button class="text-xl text-white py-4 px-8 bg-emerald-400 rounded-lg shadow-lg">
+        <button onclick="location.href='/authentication/register'" class="text-xl text-white py-4 px-8 bg-emerald-400 hover:bg-emerald-600 duration-300 rounded-lg shadow-lg">
           Get Started
         </button>
       </div>
     </div>
   </div>
-  <div class="flex justify-center">
-    <div class="mt-28 w-5/6">
+  <div class="flex justify-center" data-aos="fade-left">
+    <div class="mt-40 w-5/6">
       <h1 class="text-3xl font-bold">
         Transparent E-Government
       </h1>
       <h2 class="mt-8 text-xl">
         Monitor state revenue budget and easily manage projects' tender.
       </h2>
-      <button class="mt-6 text-emerald-400 border-2 border-emerald-400 py-2 px-4 rounded-lg shadow-lg">
+      <button onclick="location.href='/tender'" class="mt-6 text-emerald-400 border-2 border-emerald-400 hover:bg-gray-200 duration-300 py-2 px-4 rounded-lg shadow-lg">
         Tender now
       </button>
     </div>
   </div>
-  <img src="{% static 'government.jpg' %}" alt="e-government" class="mt-8 w-full">
-  <div class="flex justify-center">
+  <img src="{% static 'government.jpg' %}" alt="e-government" class="mt-8 w-full" data-aos="fade-left">
+  <div class="flex justify-center" data-aos="fade-right">
     <div class="mt-28 w-5/6">
       <h1 class="text-3xl text-right font-bold">
         Modern Tourism
@@ -42,14 +42,14 @@
         Simply explore, manage and book wonderful tourism object from your phone.
       </h2>
       <div class="flex justify-end">
-        <button class="mt-6 text-emerald-400 border-2 border-emerald-400 py-2 px-4 rounded-lg shadow-lg">
+        <button class="mt-6 text-emerald-400 border-2 border-emerald-400 hover:bg-gray-200 duration-300 py-2 px-4 rounded-lg shadow-lg">
           Tour now
         </button>
       </div>
     </div>
   </div>
-  <img src="{% static 'tourism.jpg' %}" alt="e-government" class="mt-8 w-full">
-  <div class="flex justify-center">
+  <img src="{% static 'tourism.jpg' %}" alt="e-government" class="mt-8 w-full" data-aos="fade-right">
+  <div class="flex justify-center" data-aos="fade-left">
     <div class="mt-28 w-5/6">
       <h1 class="text-3xl font-bold">
         Help People, Help Environment
@@ -57,13 +57,13 @@
       <h2 class="mt-8 text-xl">
         Take care of people while taking care of the environment.
       </h2>
-      <button class="mt-6 text-emerald-400 border-2 border-emerald-400 py-2 px-4 rounded-lg shadow-lg">
+      <button class="mt-6 text-emerald-400 border-2 border-emerald-400 hover:bg-gray-200 duration-300 py-2 px-4 rounded-lg shadow-lg">
         Help now
       </button>
     </div>
   </div>
-  <img src="{% static 'environment.jpg' %}" alt="e-government" class="mt-8 w-full">
-  <div class="flex justify-center">
+  <img src="{% static 'environment.jpg' %}" alt="e-government" class="mt-8 w-full" data-aos="fade-left">
+  <div class="flex justify-center" data-aos="fade-right">
     <div class="mt-28 w-5/6">
       <h1 class="text-3xl text-right font-bold">
         Seamless Health
@@ -72,14 +72,14 @@
         Manage your health care with just a few clicks away.
       </h2>
       <div class="flex justify-end">
-        <button class="mt-6 text-emerald-400 border-2 border-emerald-400 py-2 px-4 rounded-lg shadow-lg">
+        <button class="mt-6 text-emerald-400 border-2 border-emerald-400 hover:bg-gray-200 duration-300 py-2 px-4 rounded-lg shadow-lg">
           Check now
         </button>
       </div>
     </div>
   </div>
-  <img src="{% static 'health.webp' %}" alt="e-government" class="mt-8 w-full">
-  <div class="flex justify-center">
+  <img src="{% static 'health.webp' %}" alt="e-government" class="mt-8 w-full" data-aos="fade-right">
+  <div class="flex justify-center" data-aos="fade-left">
     <div class="mt-28 w-5/6">
       <h1 class="text-3xl font-bold">
         Modern Agriculture
@@ -87,13 +87,13 @@
       <h2 class="mt-8 text-xl">
         Help and connect farmers with their own clients and suppliers.
       </h2>
-      <button class="mt-6 text-emerald-400 border-2 border-emerald-400 py-2 px-4 rounded-lg shadow-lg">
+      <button class="mt-6 text-emerald-400 border-2 border-emerald-400 hover:bg-gray-200 duration-300 py-2 px-4 rounded-lg shadow-lg">
         Farm now
       </button>
     </div>
   </div>
-  <img src="{% static 'agriculture.webp' %}" alt="e-government" class="mt-8 w-full">
-  <div class="flex justify-center">
+  <img src="{% static 'agriculture.webp' %}" alt="e-government" class="mt-8 w-full" data-aos="fade-left">
+  <div class="flex justify-center" data-aos="fade-right">
     <div class="mt-28 w-5/6">
       <h1 class="text-3xl text-right font-bold">
         Modern Marine
@@ -102,13 +102,13 @@
         Help and connect fishermen with their own clients and suppliers.
       </h2>
       <div class="flex justify-end">
-        <button class="mt-6 text-emerald-400 border-2 border-emerald-400 py-2 px-4 rounded-lg shadow-lg">
+        <button class="mt-6 text-emerald-400 border-2 border-emerald-400 hover:bg-gray-200 duration-300 py-2 px-4 rounded-lg shadow-lg">
           Fish now
         </button>
       </div>
     </div>
   </div>
-  <img src="{% static 'sea.jpg' %}" alt="e-government" class="mt-8 w-full">
+  <img src="{% static 'sea.jpg' %}" alt="e-government" class="mt-8 w-full" data-aos="fade-right">
   <div class="mt-40"></div>
 </div>
 
