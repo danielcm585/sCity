@@ -10,8 +10,10 @@ const closeMenu = () => {
   drawer.classList.add("right-[-100vw]")
 }
 
-const message = document.getElementById("message");
+// FIXME: Fix the message timeout
+// const message = document.getElementById("message")
 
-setTimeout(() => { 
-   message.style.display = "none"; 
-}, 3000);
+// setTimeout(() => { 
+//   if (message == null) return
+//   message.style.display = "none"
+// }, 3000);
