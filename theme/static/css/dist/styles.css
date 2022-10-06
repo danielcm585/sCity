@@ -816,10 +816,6 @@ select {
   right: 0.5rem;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .z-40 {
   z-index: 40;
 }
@@ -904,6 +900,18 @@ select {
 
 .mt-28 {
   margin-top: 7rem;
+}
+
+.mt-60 {
+  margin-top: 15rem;
+}
+
+.mt-72 {
+  margin-top: 18rem;
+}
+
+.mt-64 {
+  margin-top: 16rem;
 }
 
 .block {
