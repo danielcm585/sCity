@@ -812,6 +812,10 @@ select {
   right: -100vw;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .right-2 {
   right: 0.5rem;
 }
@@ -1260,10 +1264,6 @@ select {
     width: 83.333333%;
   }
 
-  .lg\:w-1\/2 {
-    width: 50%;
-  }
-
   .lg\:items-center {
     align-items: center;
   }
@@ -1277,23 +1277,8 @@ select {
     padding-right: 5rem;
   }
 
-  .lg\:px-40 {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
   .lg\:pl-20 {
     padding-left: 5rem;
-  }
-
-  .lg\:text-black {
-    --tw-text-opacity: 1;
-    color: rgb(0 0 0 / var(--tw-text-opacity));
   }
 }
 
@@ -1327,17 +1312,8 @@ select {
     width: 50%;
   }
 
-  .xl\:w-2\/3 {
-    width: 66.666667%;
-  }
-
   .xl\:w-3\/5 {
     width: 60%;
-  }
-
-  .xl\:px-60 {
-    padding-left: 15rem;
-    padding-right: 15rem;
   }
 
   .xl\:px-40 {
@@ -1345,8 +1321,8 @@ select {
     padding-right: 10rem;
   }
 
-  .xl\:text-black {
-    --tw-text-opacity: 1;
-    color: rgb(0 0 0 / var(--tw-text-opacity));
+  .xl\:px-60 {
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
 }
