@@ -1,4 +1,4 @@
-# [APP_NAME]
+# sCity
 
 App can be accessed [here](https://pbp-smart-city.herokuapp.com/)
 
@@ -11,7 +11,7 @@ Smart city is a new concept of a city that we frequntly hear about. The concept 
 - Smart society
 - Smart living
 
-Introducing our superapp, [APP_NAME]. [APP_NAME] is a web application that allows you to manage your smart city life. [APP_NAME] provides tons of services you can use to level up your smart life. The services including these services.
+Introducing our superapp, sCity. sCity is a web application that allows you to manage your smart city life. sCity provides tons of services you can use to level up your smart life. The services including these services.
 
 - State revenue budget monitor and tender management system
 - Tourism management with online booking service
