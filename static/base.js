@@ -1,15 +1,3 @@
-// const drawer = document.getElementById("drawer")
-
-// const openMenu = () => {
-//   drawer.classList.remove("right-[-100vw]")
-//   drawer.classList.add("right-0")
-// }
-
-// const closeMenu = () => {
-//   drawer.classList.remove("right-0")
-//   drawer.classList.add("right-[-100vw]")
-// }
-
 $(document).ready(() => {
   $('#drawer-open-button').click(() => {
     $('#drawer').removeClass('right-[-100vw]')
