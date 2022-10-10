@@ -15,6 +15,11 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
 - State revenue budget monitor and tender management system
 - Tourism management with online booking service
+    Pada Tourism Management terdapat 2 jenis pengguna (admin dan user) dimana masing-masing mempunyai otoritas yang berbeda.
+    1. Admin: Dapat memasukan tempat wisata yang nantinya akan ditampilkan pada user.
+    2. User: Dapat membeli tiket (tiket memiliki tempat tujuan sesuai dengan apa yang admin masukkan)
+
+    Ketika user berhasil membeli tiket sesuai dengan tempat yang dituju, aplikasi akan menghasilkan kode tiket (dalam bentuk barcode).
 - Waste bank management system with donation support
 - Public health services management system 
 - Agricultural products management system
