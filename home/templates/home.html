@@ -4,8 +4,20 @@
 {% block content %}
 
 <div style="overflow-x: hidden">
+  <div class="absolute md:hidden w-full h-screen z-[-10]">
+    <img src="{% static 'city-sm.jpeg' %}" alt="smart-city" class="w-full" />
+  </div>
+  <div class="absolute hidden md:block lg:hidden w-full z-[-10]">
+    <img src="{% static 'city-md.jpeg' %}" alt="smart-city" class="w-full" />
+  </div>
+  <div class="hidden lg:block xl:hidden absolute w-full z-[-10]">
+    <img src="{% static 'city-lg.jpeg' %}" alt="smart-city" class="w-full" />
+  </div>
+  <div class="hidden xl:block absolute w-full z-[-10]">
+    <img src="{% static 'city-xl.jpeg' %}" alt="smart-city" class="w-full" />
+  </div>
   <div class="flex justify-center">
-    <div class="mt-60 w-5/6 lg:w-2/3 xl:w-1/2">
+    <div class="mt-40 md:mt-56 w-5/6 lg:w-2/3 xl:w-1/2 py-20 px-8 backdrop-blur-md bg-white/20 rounded-2xl">
       <h1 class="text-5xl text-center font-extrabold">
         Your smart city best partner.
       </h1>
@@ -19,8 +31,8 @@
       </div>
     </div>
   </div>
-  <div class="flex justify-center" data-aos="fade-left">
-    <div class="mt-64 w-5/6 xl:w-3/5">
+  <div class="mt-40 flex justify-center" data-aos="fade-left">
+    <div class="mt-48 md:mt-60 w-5/6 xl:w-3/5">
       <h1 class="text-3xl font-bold">
         Transparent E-Government
       </h1>
