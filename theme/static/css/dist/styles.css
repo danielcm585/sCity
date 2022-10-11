@@ -7,16 +7,6 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
-[data-aos] {
-  pointer-events: none;
-}
-.aos-animate {
-  pointer-events: auto;
-}
-.aos-init[data-aos][data-aos].aos-animate {
-  transform: unset;
-}
-
 *,
 ::before,
 ::after {
@@ -780,6 +770,10 @@ select {
   visibility: visible;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .static {
   position: static;
 }
@@ -822,12 +816,20 @@ select {
   right: -100vw;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .right-2 {
   right: 0.5rem;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.right-\[100-vw\] {
+  right: 100-vw;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .z-40 {
@@ -836,6 +838,14 @@ select {
 
 .z-30 {
   z-index: 30;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.z-\[-10\] {
+  z-index: -10;
 }
 
 .mx-6 {
@@ -924,6 +934,26 @@ select {
   margin-top: 10rem;
 }
 
+.mt-80 {
+  margin-top: 20rem;
+}
+
+.mt-72 {
+  margin-top: 18rem;
+}
+
+.mt-96 {
+  margin-top: 24rem;
+}
+
+.mt-48 {
+  margin-top: 12rem;
+}
+
+.mt-44 {
+  margin-top: 11rem;
+}
+
 .block {
   display: block;
 }
@@ -962,6 +992,10 @@ select {
 
 .h-\[85vh\] {
   height: 85vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-full {
@@ -1014,6 +1048,10 @@ select {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .border-2 {
@@ -1077,6 +1115,35 @@ select {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
+.bg-opacity-70 {
+  --tw-bg-opacity: 0.7;
+}
+
+.object-scale-down {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1110,6 +1177,11 @@ select {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .text-center {
@@ -1177,6 +1249,18 @@ select {
 .text-emerald-400 {
   --tw-text-opacity: 1;
   color: rgb(52 211 153 / var(--tw-text-opacity));
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .shadow-md {
@@ -1248,14 +1332,67 @@ select {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-60 {
+    margin-top: 15rem;
+  }
+
+  .md\:mt-56 {
+    margin-top: 14rem;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:w-3\/5 {
     width: 60%;
+  }
+
+  .md\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   }
 }
 
 @media (min-width: 1024px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+
+  .lg\:mt-72 {
+    margin-top: 18rem;
+  }
+
+  .lg\:mt-96 {
+    margin-top: 24rem;
+  }
+
+  .lg\:mt-64 {
+    margin-top: 16rem;
+  }
+
+  .lg\:mt-60 {
+    margin-top: 15rem;
+  }
+
+  .lg\:mt-80 {
+    margin-top: 20rem;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:w-11\/12 {
@@ -1304,6 +1441,10 @@ select {
 
   .xl\:mr-60 {
     margin-right: 15rem;
+  }
+
+  .xl\:block {
+    display: block;
   }
 
   .xl\:flex {
