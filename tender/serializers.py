@@ -29,16 +29,20 @@ class CompanySerializer(serializers.ModelSerializer):
 
 class ProjectSerializer(serializers.ModelSerializer):
     registrants = LazyRefSerializer('serializers.RegistrantSerializer', many=True, read_only=True)
+    chosen_registrant = LazyRefSerializer('serializers.RegistrantSerializer', read_only=True)
     class Meta:
         model = Project
-        fields = ['id','title','description','closed_at','chosen_registrat',]
+        fields = ['id','title','description','closed_at','registrants','chosen_registrant','created_at','edited_at']
 
 class RegistrantSerializer(serializers.ModelSerializer):
+    company = CompanySerializer(read_only=True)
+    project = ProjectSerializer(read_only=True)
     class Meta:
         model = Registrant
-        fields = []
+        fields = ['id','company','project','offer_price','deal_price','registered_at']
 
 class ItemSerializer(serializers.ModelSerializer):
+    registrant = RegistrantSerializer(read_only=True)
     class Meta:
         model = Item
-        fields = []
+        fields = ['id','registrant','name','quantity','price','description']
