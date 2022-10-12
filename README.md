@@ -38,7 +38,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
     1. User : Dapat melakukan penyetoran sampah di bank sampah, serta melakukan donasi
     2. Admin : dapat melakukan update terhadap progres bank sampai yang setorkan oleh User
     
-    Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah dan pengumpulan donasi menjadi lebih baik menggunakan teknologi digunakan.
+    Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah dan pengumpulan donasi menjadi lebih baik menggunakan teknologi yang digunakan.
 
 - Public health services management system 
 
