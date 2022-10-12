@@ -21,8 +21,8 @@ class Project(models.Model):
 
 class Registrant(models.Model):
     id = models.AutoField(primary_key=True)
-    company_id = models.OneToOneField(Company, on_delete=models.CASCADE)
-    project_id = models.OneToOneField(Project, on_delete=models.CASCADE, )
+    company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
+    project_id = models.ForeignKey(Project, on_delete=models.CASCADE, )
     offer_price = models.IntegerField()
     deal_price = models.IntegerField()
     registered_at = models.DateTimeField(auto_now_add=True)
