@@ -12,4 +12,6 @@ urlpatterns = [
     path('json/company/<int:id>', one_company_json, name='one_company_json'),
     path('json/project/', all_projects_json, name='all_projects_json'),
     path('json/project/<int:id>', one_project_json, name='one_project_json'),
+    path('json/registrant/', all_registrants_json, name='all_registrants_json'),
+    path('json/registrant/<int:id>', one_registrant_json, name='one_registrant_json'),
 ]
