@@ -34,6 +34,12 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
 - Waste bank management system with donation support
 
+    Pada Waste bank management system with donation terdapat 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
+    1. User : Dapat melakukan penyetoran sampah di bank sampah, serta melakukan donasi
+    2. Admin : dapat melakukan update terhadap progres bank sampai yang setorkan oleh User
+    
+    Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah dan pengumpulan donasi menjadi lebih baik menggunakan teknologi digunakan.
+
 - Public health services management system 
 
 - Agricultural products management system
