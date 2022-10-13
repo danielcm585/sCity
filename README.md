@@ -1,6 +1,7 @@
 # sCity
 
 ## kelompok E08 
+
 1. Daniel Christian Mandolang
 2. Dylan Adiprawira (2106750446)
 3. Jessica Lambok (2106654883)
@@ -11,7 +12,7 @@
 
 App can be accessed [here](https://scity.herokuapp.com/)
 
-Smart city is a new concept of a city that we frequntly hear about. The concept is all about digitalizing all kind of activities held in a city. The actual purpose of smart city is to create a city that is smart enough to recognize all kinds of events that happen in a city. These are the main pillar of smart city.
+Smart city is a new concept of a city that we frequently hear about. The concept is all about digitalizing all kind of activities held in a city. The actual purpose of smart city is to create a city that is smart enough to recognize all kinds of events that happen in a city. These are the main pillar of smart city.
 
 - Smart environment
 - Smart economy
@@ -50,6 +51,12 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
     Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah menjadi lebih baik menggunakan teknologi yang digunakan.
 
 - Public health services management system - Dylan Adiprawira
+
+    Pada Health services ini terdapat 2 jenis pengguna (admin dan user) keduanya memiliki authorization yang berbeda
+    1. Admin: dapat memasukkan nama puskesmas yang registered, mereview form yang diberi user untuk dikonfirmasi.
+    2. User: dapat meregistrasi ke registered puskesmas, dapat mengisi appointment date, dapat mengisi form general.
+
+    Aplikasi ini diharapkan dapat memudahkan client untuk mendapatkan pertolongan yang mudah dan cepat tanpa melewati burokrasi yang rumit.
 
 - Agricultural products management system - Raudhatul Jannah
 
