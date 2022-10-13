@@ -39,14 +39,15 @@ def all_companies_json(request):
         # Create a new company (User)
         if (request.user.is_authenticated):
             form = CompanyForm(request.POST)
-            new_company = Company.objects.create(
-                user = request.user,
-                company_name = form.cleaned_data.get('company_name'),
-                pt_name = form.cleaned_data.get('pt_name'),
-                npwp = form.cleaned_data.get('npwp'),
-            )
-            new_company_serialized = CompanySerializer(instance=new_company)
-            return Response(new_company_serialized.data, status=status.HTTP_201_CREATED)
+            if (form.is_valid()):
+                new_company = Company.objects.create(
+                    user = request.user,
+                    company_name = form.cleaned_data.get('company_name'),
+                    pt_name = form.cleaned_data.get('pt_name'),
+                    npwp = form.cleaned_data.get('npwp'),
+                )
+                new_company_serialized = CompanySerializer(instance=new_company)
+                return Response(new_company_serialized.data, status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'GET'): return get()
@@ -81,12 +82,15 @@ def all_projects_json(request):
         if (request.user.is_authenticated):
             # TODO: Check admin
             form = ProjectForm(request.POST)
-            new_project = Project.objects.create(
-                title = form.cleaned_data.get('title'),
-                description = form.cleaned_data.get('description'),
-            )
-            new_project_serialized = ProjectSerializer(instance=new_project)
-            return Response(new_project_serialized.data, status=status.HTTP_201_CREATED)
+            print(form.is_valid())
+            if (form.is_valid()):
+                new_project = Project.objects.create(
+                    title = form.cleaned_data.get('title'),
+                    description = form.cleaned_data.get('description'),
+                )
+                new_project_serialized = ProjectSerializer(instance=new_project)
+                return Response(new_project_serialized.data, status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'GET'): return get()

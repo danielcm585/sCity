@@ -20,9 +20,11 @@
         {% csrf_token %}
         <div class="w-full">
           <p>Title</p>
-          <input type="text" name="title" class="w-full rounded-lg">
+          <input type="text" name="title" class="form-control w-full rounded-lg">
           <p class="mt-4">Description</p>
-          <textarea name="description" class="w-full rounded-lg"></textarea>
+          <textarea name="description" class="form-control w-full rounded-lg"></textarea>  
+          <!-- <p class="mt-4">Photo</p> -->
+          <!-- <input type="file" name="photo" class="form-control"> -->
           <button type="submit" class="mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
             Save
           </button>
@@ -41,11 +43,36 @@
         + New Project
       </button>
     </div>
-    <div id="projects-section">
-
+    <div id="projects-section" class="grid grid-cols-2 gap-4 mt-4">
+      
+    </div>
+    <div id="more-projects" class="hidden mt-4 flex justify-between">
+      <div></div>
+      <button class="text-emerald-400 hover:text-emerald-600 duration-300">
+        Show all >
+      </button>
+    </div>
+    <div class="mt-6 w-full flex justify-between items-center">
+      <h1 class="font-bold text-2xl">
+        Companies
+      </h1>
+      <button id="new-company-open-button" class="bg-emerald-400 text-white py-2 px-3 rounded-lg shadow-md hover:bg-emerald-600 duration-300">
+        + New Company
+      </button>
+    </div>
+    <div id="companies-section" class="grid grid-cols-2 gap-4 mt-4">
+      
+    </div>
+    <div id="more-companies" class="hidden mt-4 flex justify-between">
+      <div></div>
+      <button class="text-emerald-400 hover:text-emerald-600 duration-300">
+        Show all >
+      </button>
     </div>
   </div>
 </div>
+
+<div class="hover:bg-gray-200 text-gray-500 w-11/12 text-center text-ellipsis overflow-hidden hidden p-2 shadow-md rounded-lg"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{% static 'tender.js' %}"></script>
