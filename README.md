@@ -2,7 +2,7 @@
 
 ## kelompok E08 
 1. Daniel Christian Mandolang (2106630006)
-2. Dylan Adiprawira
+2. Dylan Adiprawira (2106750446)
 3. Jessica Lambok
 4. Muhammad Adryna Haska Putra
 5. Naufal Fikri Hakim
