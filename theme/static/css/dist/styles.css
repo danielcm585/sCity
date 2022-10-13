@@ -832,6 +832,10 @@ select {
   z-index: -10;
 }
 
+.z-\[-9\] {
+  z-index: -9;
+}
+
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
