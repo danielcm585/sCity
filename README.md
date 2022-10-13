@@ -49,16 +49,13 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
     
     Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah menjadi lebih baik menggunakan teknologi yang digunakan.
 
-<<<<<<< HEAD
-- Public health services management system 
+- Public health services management system - Dylan Adiprawira
+
     Pada Health services ini terdapat 2 jenis pengguna (admin dan user) keduanya memiliki authorization yang berbeda
     1. Admin: dapat memasukkan nama puskesmas yang registered, mereview form yang diberi user untuk dikonfirmasi.
     2. User: dapat meregistrasi ke registered puskesmas, dapat mengisi appointment date, dapat mengisi form general.
 
     Aplikasi ini diharapkan dapat memudahkan client untuk mendapatkan pertolongan yang mudah dan cepat tanpa melewati burokrasi yang rumit.
-=======
-- Public health services management system - Dylan Adiprawira
->>>>>>> 5ce908e (+ pembagian tugas)
 
 - Agricultural products management system - Raudhatul Jannah
 
