@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Company(models.Model):
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=100)
     pt_name = models.CharField(max_length=200)
     npwp = models.CharField(max_length=30)

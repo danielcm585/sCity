@@ -1,5 +1,5 @@
 from django.db import models
-from tender.models import Registrant
+from tender.models.registrant import Registrant
 
 class Item(models.Model):
     id = models.AutoField(primary_key=True)
