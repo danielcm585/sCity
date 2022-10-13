@@ -1,5 +1,14 @@
 # sCity
 
+## kelompok E08 
+1. Daniel Christian Mandolang
+2. Dylan Adiprawira
+3. Jessica Lambok
+4. Muhammad Adryna Haska Putra
+5. Naufal Fikri Hakim
+6. Raudhatul Jannah
+---
+
 App can be accessed [here](https://scity.herokuapp.com/)
 
 Smart city is a new concept of a city that we frequntly hear about. The concept is all about digitalizing all kind of activities held in a city. The actual purpose of smart city is to create a city that is smart enough to recognize all kinds of events that happen in a city. These are the main pillar of smart city.
@@ -34,11 +43,11 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
 - Waste bank management system with donation support
 
-    Pada Waste bank management system with donation terdapat 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
-    1. User : Dapat melakukan penyetoran sampah di bank sampah, serta melakukan donasi
+    Pada Waste bank management system 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
+    1. User : Dapat melakukan penyetoran sampah di bank sampah
     2. Admin : dapat melakukan update terhadap progres bank sampah yang di setorkan oleh User
     
-    Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah dan pengumpulan donasi menjadi lebih baik menggunakan teknologi yang digunakan.
+    Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah menjadi lebih baik menggunakan teknologi yang digunakan.
 
 - Public health services management system 
     Pada Health services ini terdapat 2 jenis pengguna (admin dan user) keduanya memiliki authorization yang berbeda
