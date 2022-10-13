@@ -1,11 +1,10 @@
 # sCity
 
 ## kelompok E08 
-
-1. Daniel Christian Mandolang
+1. Daniel Christian Mandolang (2106630006)
 2. Dylan Adiprawira (2106750446)
 3. Jessica Lambok (2106654883)
-4. Muhammad Adryna Haska Putra (2106750641)
+4. Muhammad Adryan Haska Putra (2106750641)
 5. Naufal Fikri Hakim (2106750566)
 6. Raudhatul Jannah (2106654422)
 ---
