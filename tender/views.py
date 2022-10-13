@@ -12,19 +12,20 @@ from tender.serializers.company import CompanySerializer
 from tender.serializers.project import ProjectSerializer
 from tender.serializers.registrant import RegistrantSerializer
 
-# def dashboard(request):
-#     return render(request, "tender.html")
+def dashboard(request):
+    context = { 'is_admin': True }
+    return render(request, "tender.html", context)
 
-# def all_companies(request):
-#     return render(request, "all_companies.html")
+def all_companies(request):
+    return render(request, "all_companies.html")
 
-# def one_company(request, id):
-#     context = { 'id': id }
-#     return render(request, "one_company.html", context)
+def one_company(request, id):
+    context = { 'id': id }
+    return render(request, "one_company.html", context)
 
-# def one_project(request, id):
-#     context = { 'id': id }
-#     return render(request, "one_project.html", context)
+def one_project(request, id):
+    context = { 'id': id }
+    return render(request, "one_project.html", context)
 
 @api_view(['GET','POST'])
 def all_companies_json(request):
@@ -119,7 +120,7 @@ def all_registrants_json(request, id):
         # Add new registration to project :id (Company)
         if (request.user.is_authenticated):
             # TODO: Check company id
-            return Response(_, status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'GET'): return get()
@@ -135,6 +136,7 @@ def one_registrant_json(request, id):
     
     def put():
         # Edit registration :id (Company)
+        # TODO: Later
         return ""
 
     if (request.method == 'GET'): return get()
