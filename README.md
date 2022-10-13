@@ -24,7 +24,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
 - Single Sign On (SSO) authentication system
 
-- State revenue budget monitor and tender management system
+- State revenue budget monitor and tender management system - Daniel Christian Mandolang
     
     There will be 3 roles in this app:
     1. Government (admin) will create projects' tender
@@ -33,7 +33,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
     
     By using this platform, we can develop a transparent state revenue budget allocation.
 
-- Tourism management with online booking service
+- Tourism management with online booking service - Jessica Lambok
     
     Pada Tourism Management terdapat 2 jenis pengguna (admin dan user) dimana masing-masing mempunyai otoritas yang berbeda.
     1. Admin: Dapat memasukan tempat wisata yang nantinya akan ditampilkan pada user.
@@ -41,7 +41,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
     Ketika user berhasil membeli tiket sesuai dengan tempat yang dituju, aplikasi akan menghasilkan kode tiket (dalam bentuk barcode).
 
-- Waste bank management system
+- Waste bank management system - Muhammad Adryna Haska Putra
 
     Pada Waste bank management system 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
     1. User : Dapat melakukan penyetoran sampah di bank sampah
@@ -49,10 +49,10 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
     
     Aplikasi ini diharapkan dapat membantu pengelolaan bank sampah menjadi lebih baik menggunakan teknologi yang digunakan.
 
-- Public health services management system 
+- Public health services management system - Dylan Adiprawira
 
-- Agricultural products management system
+- Agricultural products management system - Raudhatul Jannah
 
-- Marine products management system
+- Marine products management system - Naufal Fikri Hakim
 
 Those services are accessible online with a single sign on authentication through your smart devices that support web browsers such as mobile phones, tablets, or personal computers.
