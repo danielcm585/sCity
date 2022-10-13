@@ -1,7 +1,7 @@
 # sCity
 
 ## kelompok E08 
-1. Daniel Christian Mandolang
+1. Daniel Christian Mandolang (2106630006)
 2. Dylan Adiprawira
 3. Jessica Lambok
 4. Muhammad Adryna Haska Putra
@@ -11,7 +11,7 @@
 
 App can be accessed [here](https://scity.herokuapp.com/)
 
-Smart city is a new concept of a city that we frequntly hear about. The concept is all about digitalizing all kind of activities held in a city. The actual purpose of smart city is to create a city that is smart enough to recognize all kinds of events that happen in a city. These are the main pillar of smart city.
+Smart city is a new concept of a city that we frequently hear about. The concept is all about digitalizing all kind of activities held in a city. The actual purpose of smart city is to create a city that is smart enough to recognize all kinds of events that happen in a city. These are the main pillar of smart city.
 
 - Smart environment
 - Smart economy
