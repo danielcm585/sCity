@@ -4,7 +4,7 @@
 1. Daniel Christian Mandolang (2106630006)
 2. Dylan Adiprawira
 3. Jessica Lambok
-4. Muhammad Adryna Haska Putra
+4. Muhammad Adryna Haska Putra (2106750641)
 5. Naufal Fikri Hakim
 6. Raudhatul Jannah
 ---
