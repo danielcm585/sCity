@@ -8,7 +8,7 @@ $(document).ready(() => {
       .filter((project, idx) => idx < 6)
       .forEach((project, idx) => {
         $('#projects-section').append(`
-          <div class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
+          <div onclick="location.href='/tender/project/${project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
             <img src="${project.photo}" class="rounded-t-lg">
             <div class="p-4 w-full rounded-b-lg">
               <h1 class="font-bold text-xl text-center">
@@ -32,7 +32,7 @@ $(document).ready(() => {
       .filter((company, idx) => idx < 6)
       .forEach((company, idx) => {
         $('#companies-section').append(`
-          <div class="shadow-md rounded-lg flex-col justify-center ">
+          <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
             <img src="${company.photo}" class="rounded-t-lg">
             <div class="p-4 w-full rounded-b-lg">
               <h1 class="font-bold text-xl text-center">
@@ -77,7 +77,7 @@ $(document).ready(() => {
       success: (project) => {
         if (++num_of_projects <= 6) {
           $('#projects-section').append(`
-            <div class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
+            <div onclick="location.href='/tender/project/${project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
               <img src="${project.photo}" class="rounded-t-lg">
               <div class="p-4 w-full rounded-b-lg">
                 <h1 class="font-bold text-xl text-center">
@@ -108,7 +108,7 @@ $(document).ready(() => {
       success: (company) => {
         if (++num_of_companies <= 6) {
           $('#companies-section').append(`
-            <div class="shadow-md rounded-lg flex-col justify-center ">
+            <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
               <img src="${company.photo}" class="rounded-t-lg">
               <div class="p-4 w-full rounded-b-lg">
                 <h1 class="font-bold text-xl text-center">

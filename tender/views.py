@@ -23,6 +23,9 @@ def one_company(request, id):
     context = { 'id': id }
     return render(request, "one_company.html", context)
 
+def all_projects(request):
+    return render(request, "all_projects.html")
+
 def one_project(request, id):
     context = { 'id': id }
     return render(request, "one_project.html", context)

@@ -7,6 +7,7 @@ urlpatterns = [
     path('', dashboard, name='dashboard'),
     path('company/', all_companies, name='all_companies'),
     path('company/<int:id>', one_company, name='one_company'),
+    path('project/', all_projects, name='all_projects'),
     path('project/<int:id>', one_project, name='one_project'),
     path('json/company/', all_companies_json, name='all_companies_json'),
     path('json/company/<int:id>', one_company_json, name='one_company_json'),
