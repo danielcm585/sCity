@@ -61,4 +61,10 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
 - Marine products management system - Naufal Fikri Hakim
 
+    Pada Marine products management system, terdapat 2 jenis pengguna (admin dan user) keduanya memiliki authorization yang berbeda
+    1. Admin: dapat manambahkan item yang ditawarkan oleh nelayan dan juga dapat menghapusnya
+    2. User: dapat melihat listing item-item yang ditawarkan oleh nelayan dan dapat mencari item yang dicari melalui searchbar
+
+    Aplikasi ini diharapkan dapat membantu para nelayan dalam mempromosikan dan menjual hasil kekayaan laut yang didapatkannya
+
 Those services are accessible online with a single sign on authentication through your smart devices that support web browsers such as mobile phones, tablets, or personal computers.
