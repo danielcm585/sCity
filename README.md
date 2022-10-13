@@ -2,11 +2,11 @@
 
 ## kelompok E08 
 1. Daniel Christian Mandolang
-2. Dylan Adiprawira
-3. Jessica Lambok
+2. Dylan Adiprawira (2106750446)
+3. Jessica Lambok (2106654883)
 4. Muhammad Adryna Haska Putra (2106750641)
-5. Naufal Fikri Hakim
-6. Raudhatul Jannah
+5. Naufal Fikri Hakim (2106750566)
+6. Raudhatul Jannah (2106654422)
 ---
 
 App can be accessed [here](https://scity.herokuapp.com/)
@@ -41,7 +41,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
     Ketika user berhasil membeli tiket sesuai dengan tempat yang dituju, aplikasi akan menghasilkan kode tiket (dalam bentuk barcode).
 
-- Waste bank management system with donation support
+- Waste bank management system
 
     Pada Waste bank management system 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
     1. User : Dapat melakukan penyetoran sampah di bank sampah
