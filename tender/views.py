@@ -4,20 +4,19 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-def dashboard(request):
-    return render(request, "tender.html")
+# def dashboard(request):
+#     return render(request, "tender.html")
 
-@login_required(login_url='/authentication/login')
-def admin(request):
-    # TODO: If not admin -> Forbidden
-    return render(request, "tender-admin.html")
+# def all_companies(request):
+#     return render(request, "all_companies.html")
 
-def all_companies(request):
-    return render(request, "all_companies.html")
+# def one_company(request, id):
+#     context = { 'id': id }
+#     return render(request, "one_company.html", context)
 
-def one_company(request, id):
-    context = { 'id': id }
-    return render(request, "one_company.html", context)
+# def one_project(request, id):
+#     context = { 'id': id }
+#     return render(request, "one_project.html", context)
 
 @api_view(['GET','POST'])
 def all_companies_json(request):
