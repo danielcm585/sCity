@@ -922,6 +922,10 @@ select {
   margin-top: 7rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -974,6 +978,10 @@ select {
   height: 1.5rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -996,6 +1004,10 @@ select {
 
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .max-w-xs {
@@ -1147,6 +1159,11 @@ select {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1157,6 +1174,10 @@ select {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .py-2 {
@@ -1405,11 +1426,6 @@ select {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:bg-black {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   }
 }
 

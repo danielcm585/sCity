@@ -5,7 +5,7 @@ $(document).ready(() => {
   $.get('/tender/json/project/', (projects) => {
     num_of_projects = projects.length
     projects
-      .filter((project, idx) => idx < 6)
+      .filter((project, idx) => idx < 10)
       .forEach((project, idx) => {
         $('#projects-section').append(`
           <div onclick="location.href='/tender/project/${project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
@@ -21,7 +21,7 @@ $(document).ready(() => {
           </div>
         `)
       })
-    if (num_of_projects > 6) {
+    if (num_of_projects > 10) {
       $('#more-projects').removeClass('hidden')
     }
   })
@@ -29,7 +29,7 @@ $(document).ready(() => {
   $.get('/tender/json/company/', (companies) => {
     num_of_companies = companies.length
     companies
-      .filter((company, idx) => idx < 6)
+      .filter((company, idx) => idx < 10)
       .forEach((company, idx) => {
         $('#companies-section').append(`
           <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
@@ -45,7 +45,7 @@ $(document).ready(() => {
           </div>
         `)
       })
-    if (num_of_companies > 6) {
+    if (num_of_companies > 10) {
       $('#more-companies').removeClass('hidden')
     }
   })
@@ -75,7 +75,7 @@ $(document).ready(() => {
       dataType: 'json',
       data: $('#new-project-form').serialize(),
       success: (project) => {
-        if (++num_of_projects <= 6) {
+        if (++num_of_projects <= 10) {
           $('#projects-section').append(`
             <div onclick="location.href='/tender/project/${project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
               <img src="${project.photo}" class="rounded-t-lg">
@@ -90,13 +90,14 @@ $(document).ready(() => {
             </div>
           `)
         }
-        if (num_of_projects > 6) {
+        if (num_of_projects > 10) {
           $('more-projects').removeClass('hidden')
         }
         $('#new-project-modal').addClass('hidden')
       }
     })
   })
+  
   $('#new-company-form').submit((e) => {
     e.preventDefault()
     $.ajax({
@@ -106,7 +107,7 @@ $(document).ready(() => {
       dataType: 'json',
       data: $('#new-company-form').serialize(),
       success: (company) => {
-        if (++num_of_companies <= 6) {
+        if (++num_of_companies <= 10) {
           $('#companies-section').append(`
             <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
               <img src="${company.photo}" class="rounded-t-lg">
@@ -121,7 +122,7 @@ $(document).ready(() => {
             </div>
           `)
         }
-        if (num_of_projects > 6) {
+        if (num_of_projects > 10) {
           $('more-projects').removeClass('hidden')
         }
         $('#new-project-modal').addClass('hidden')

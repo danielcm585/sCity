@@ -30,6 +30,10 @@ def one_project(request, id):
     context = { 'id': id }
     return render(request, "one_project.html", context)
 
+def join_tender(request, id):
+    context = { 'id': id }
+    return render(request, "join_tender.html", context)
+
 @api_view(['GET','POST'])
 def all_companies_json(request):
     def get():
@@ -55,6 +59,17 @@ def all_companies_json(request):
 
     if (request.method == 'GET'): return get()
     elif (request.method == 'POST'): return post()
+
+@api_view(['GET'])
+def my_companies_json(request):
+    def get():
+        if (request.user.is_authenticated):
+            companies = Company.objects.filter(user=request.user)
+            companies_serialized = CompanySerializer(instance=companies, many=True)
+            return Response(companies_serialized.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+    if (request.method == 'GET'): return get()
 
 @api_view(['GET','PUT'])
 def one_company_json(request, id):
