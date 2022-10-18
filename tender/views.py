@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -133,18 +134,18 @@ def one_project_json(request, id):
 
 @api_view(['GET','POST'])
 def all_registrants_json(request):
+    @csrf_exempt
     def post():
         # Add new registration to project :id (Company)
         if (request.user.is_authenticated):
-            form = RegistrantForm(request.POST)
-            if (form.is_valid()):
-                company_id = form.cleaned_data.get('company_id')
-                company = Company.objects.get(id=company_id)
-                if (company != None):
-                    new_registrant = Registrant.objects.create(company_id=company_id)
-                    new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
-                    return Response(status=status.HTTP_201_CREATED)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            print('VIEWS')
+            company_id = request.body.get('company_id')
+            print(company_id)
+            company = Company.objects.get(id=company_id)
+            if (company != None):
+                new_registrant = Registrant.objects.create(company_id=company_id)
+                new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
+                return Response(status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'POST'): return post()

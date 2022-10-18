@@ -35,7 +35,6 @@ $(document).ready(() => {
       price: $('#item-price').val(),
       description: $('#item-description').val()
     }
-    console.log(new_item)
     items.push(new_item)
     $('#num-of-items').text(`${items.length} items`)
     $('#items-section').append(`
@@ -58,30 +57,35 @@ $(document).ready(() => {
     $('#new-item-modal').addClass('hidden')
   })
 
-  $('#new-tender-form').submit((e) => {
-    e.preventDefault()
+  $('#save-tender').click(() => {
+    console.log('HERE')
     $.ajax({
       url: '/tender/json/registrant/',
       type: 'POST',
       credentials: 'include',
-      dataType: 'json',
-      data: $('#new-tender-form').serialize(),
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'text',
+      data: JSON.stringify({ 
+        company_id: parseInt($('#choose-company').val())
+      }),
       success: (registrant) => {
         items.forEach((item) => {
           $.ajax({
             url: '/tender/json/item/',
             type: 'POST',
             credentials: 'include',
-            dataType: 'json',
-            data: {
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'text',
+            data: JSON.stringify({
               registrant_id: registrant.id,
               ...item
-            },
+            }),
             error: (err) => alert('Failed to save item')
           })
         })
         location.href = `/tender/project/${id}`
       }
     })
+    console.log('DONE')
   })
 })
