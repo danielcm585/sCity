@@ -1,6 +1,5 @@
 $(document).ready(() => {
   $('#drawer-open-button').click(() => {
-    console.log('OPEN')
     $('#drawer').removeClass('right-[-100vw]')
     $('#drawer').addClass('right-0')
   })

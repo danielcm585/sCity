@@ -8,6 +8,7 @@ from tender.models.company import Company
 from tender.models.project import Project
 from tender.models.registrant import Registrant
 from tender.forms.company import CompanyForm
+from tender.forms.registrant import RegistrantForm
 from tender.serializers.company import CompanySerializer
 from tender.serializers.project import ProjectSerializer
 from tender.serializers.registrant import RegistrantSerializer
@@ -131,22 +132,22 @@ def one_project_json(request, id):
     elif (request.method == 'PUT'): return put()
 
 @api_view(['GET','POST'])
-def all_registrants_json(request, id):
-    def get():
-        # Get all registrant of project :id (Public)
-        registrants = Registrant.objects.filter(project_id=id)
-        registrants_serialized = RegistrantSerializer(instance=registrants, many=True)
-        return Response(registrants_serialized.data, status=status.HTTP_200_OK)
-    
+def all_registrants_json(request):
     def post():
         # Add new registration to project :id (Company)
         if (request.user.is_authenticated):
-            # TODO: Check company id
-            return Response(status=status.HTTP_201_CREATED)
+            form = RegistrantForm(request.POST)
+            if (form.is_valid()):
+                company_id = form.cleaned_data.get('company_id')
+                company = Company.objects.get(id=company_id)
+                if (company != None):
+                    new_registrant = Registrant.objects.create(company_id=company_id)
+                    new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
+                    return Response(status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
-    if (request.method == 'GET'): return get()
-    elif (request.method == 'POST'): return post()
+    if (request.method == 'POST'): return post()
 
 @api_view(['GET','PUT'])
 def one_registrant_json(request, id):
@@ -164,3 +165,27 @@ def one_registrant_json(request, id):
     if (request.method == 'GET'): return get()
     elif (request.method == 'PUT'): return put()
 
+@api_view(['POST'])
+def item_json(request):
+    def post():
+        registrant_id = request.body.get('registrant_id')
+        name = request.body.get('name')
+        quantity = request.body.get('quantity')
+        price = request.body.get('price')
+        description = request.body.get('description')
+
+        registrant = Registrant.objects.get(id=registrant_id)
+        registrant.offer_price += price*quantity
+        registrant.save()
+
+        new_item = Item.objects.create(
+            registrant_id = registrant,
+            name = name,
+            quantity = quantity,
+            price = price,
+            description = description,
+        )
+        new_item_serialized = ItemSerializer(instance=new_item)
+        return Response(new_item_serialized, status=status.HTTP_201_CREATED)
+
+    if (request.method == 'POST'): return post()

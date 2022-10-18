@@ -17,7 +17,6 @@
     </div>
     <div class="p-4 w-full flex justify-center">
       <form id="new-project-form" class="w-full">
-        {% csrf_token %}
         <div class="w-full">
           <p>Title</p>
           <input type="text" name="title" class="form-control w-full rounded-lg">
@@ -92,7 +91,7 @@
         + New Company
       </button>
     </div>
-    <div id="companies-section" class="grid grid-cols-2 gap-4 mt-4">
+    <div id="companies-section" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
       
     </div>
     <div id="more-companies" class="hidden mt-3 flex justify-between">

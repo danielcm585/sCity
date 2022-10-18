@@ -122,10 +122,11 @@ $(document).ready(() => {
             </div>
           `)
         }
+        console.log('HERE')
         if (num_of_projects > 10) {
-          $('more-projects').removeClass('hidden')
+          $('more-companys').removeClass('hidden')
         }
-        $('#new-project-modal').addClass('hidden')
+        $('#new-company-modal').addClass('hidden')
       }
     })
   })

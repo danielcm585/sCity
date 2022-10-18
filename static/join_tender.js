@@ -1,32 +1,87 @@
-let my_companies = []
+let item_id = 0
+let items = []
 
 $(document).ready(() => {
-  $.get(`/tender/json/project/${id}/`, (project) => {
-    // $.get('/tender/json/company/mine/', (companies) => {
-    //   my_companies = companies
-    // })
+  $.get(`/tender/json/project/${id}`, (project) => {
+    console.log(project)
+    $('#title').text(`New Tender to ${project.title}`)
+  })
 
-    $('#new-tender-section').append(`
-      <div class="flex">
-        <button onclick="history.back()">
-          <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="28px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="28px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "/></svg>
+  $.get('/tender/json/company/mine/', (companies) => {
+    companies.map((company, idx) => {
+      $('#choose-company').append(`
+        <option value="${company.id}">${company.company_name}</option>
+      `)
+    })
+  })
+
+  $('#new-item-open-button').click(() => {
+    $('#new-item-modal').removeClass('hidden')
+  })
+  
+  $('#new-item-close-button').click(() => {
+    $('#new-item-modal').addClass('hidden')
+  })
+
+  $('#save-item').click(() => {
+    const parseIDR = (amount) => {
+      return "IDR "+amount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".") +",00"
+    }
+
+    new_item = {
+      id: item_id++,
+      name: $('#item-name').val(),
+      quantity: $('#item-quantity').val(),
+      price: $('#item-price').val(),
+      description: $('#item-description').val()
+    }
+    console.log(new_item)
+    items.push(new_item)
+    $('#num-of-items').text(`${items.length} items`)
+    $('#items-section').append(`
+      <div id="item-${new_item.id}" class="mt-4 p-4 w-full flex justify-between items-center shadow-lg rounded-lg hover:bg-gray-200 duration-300">
+        <div>
+          <p class="font-bold text-xl">${new_item.quantity} ${new_item.name}</p>
+          <p class="text-gray-400">${new_item.description}</p>
+          <p class="text-emerald-400">${parseIDR(new_item.price*new_item.quantity)}</p>
+        </div>
+        <button id="delete-item-${new_item.id}" type="button" class="text-red-400 hover:text-red-600 duration-300">
+          Delete
         </button>
-        <h1 class="ml-2 text-2xl font-bold">
-          New Tender to ${project.title}
-        </h1>
-      </div>
-      <div class="mt-4">
-        <form id="new-tender-form">
-          <div>
-            <p>Company</p>
-            <select name="company" id="choose-company" class="form-control w-full rounded-lg">
-              ${my_companies.map((company, idx) => `
-                <option value="${company.id}">${company.company_name}</option>
-              `)}
-            </select>
-          </div>
-        </form>
       </div>
     `)
+    $("#delete-item-"+new_item.id).click(() => {
+      items = items.filter((item) => item.id !== new_item.id)
+      $(`#item-${new_item.id}`).addClass('hidden')
+      $('#num-of-items').text(`${items.length} items`)
+    })
+    $('#new-item-modal').addClass('hidden')
+  })
+
+  $('#new-tender-form').submit((e) => {
+    e.preventDefault()
+    $.ajax({
+      url: '/tender/json/registrant/',
+      type: 'POST',
+      credentials: 'include',
+      dataType: 'json',
+      data: $('#new-tender-form').serialize(),
+      success: (registrant) => {
+        items.forEach((item) => {
+          $.ajax({
+            url: '/tender/json/item/',
+            type: 'POST',
+            credentials: 'include',
+            dataType: 'json',
+            data: {
+              registrant_id: registrant.id,
+              ...item
+            },
+            error: (err) => alert('Failed to save item')
+          })
+        })
+        location.href = `/tender/project/${id}`
+      }
+    })
   })
 })
