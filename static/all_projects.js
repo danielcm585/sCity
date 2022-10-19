@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $.get('/tender/json/project/', (projects) => {
+  $.get('/tender/api/project/', (projects) => {
     num_of_projects = projects.length
     projects.forEach((project, idx) => {
       $('#projects-section').append(`
@@ -29,7 +29,7 @@ $(document).ready(() => {
   $('#new-project-form').submit((e) => {
     e.preventDefault()
     $.ajax({
-      url: '/tender/json/project/',
+      url: '/tender/api/project/',
       type: 'POST',
       credentials: 'include',
       dataType: 'json',

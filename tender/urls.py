@@ -1,5 +1,9 @@
 from django.urls import path
-from tender.views import *
+from tender.views.general_view import *
+from tender.views.company_view import *
+from tender.views.item_view import *
+from tender.views.project_view import *
+from tender.views.registrant_view import *
 
 app_name = 'tender'
 
@@ -10,12 +14,12 @@ urlpatterns = [
     path('project/', all_projects, name='all_projects'),
     path('project/<int:id>/', one_project, name='one_project'),
     path('join-tender/<int:id>/', join_tender, name='join_tender'),
-    path('json/company/', all_companies_json, name='all_companies_json'),
-    path('json/company/<int:id>/', one_company_json, name='one_company_json'),
-    path('json/company/mine/', my_companies_json, name='my_companies_json'),
-    path('json/project/', all_projects_json, name='all_projects_json'),
-    path('json/project/<int:id>/', one_project_json, name='one_project_json'),
-    path('json/registrant/', all_registrants_json, name='all_registrants_json'),
-    path('json/registrant/<int:id>/', one_registrant_json, name='one_registrant_json'),
-    path('json/item/', item_json, name='item_json'),
+    path('api/company/', all_companies_api, name='all_companies_api'),
+    path('api/company/<int:id>/', one_company_api, name='one_company_api'),
+    path('api/company/mine/', my_companies_api, name='my_companies_api'),
+    path('api/project/', all_projects_api, name='all_projects_api'),
+    path('api/project/<int:id>/', one_project_api, name='one_project_api'),
+    path('api/registrant/', all_registrants_api, name='all_registrants_api'),
+    path('api/registrant/<int:id>/', one_registrant_api, name='one_registrant_api'),
+    path('api/item/', item_api, name='item_api'),
 ]

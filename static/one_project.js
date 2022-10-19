@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $.get(`/tender/json/project/${id}/`, (project) => {
+  $.get(`/tender/api/project/${id}/`, (project) => {
     console.log(project)
     $('#project-section').append(`
       <div class="w-full flex justify-between items-center">

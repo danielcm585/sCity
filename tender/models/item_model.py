@@ -5,6 +5,6 @@ class Item(models.Model):
     id = models.AutoField(primary_key=True)
     registrant = models.ForeignKey(Registrant, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    quantity = models
+    quantity = models.IntegerField()
     price = models.IntegerField()
     description = models.TextField()

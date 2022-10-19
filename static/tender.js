@@ -2,7 +2,7 @@ let num_of_projects = 0
 let num_of_companies = 0
 
 $(document).ready(() => {
-  $.get('/tender/json/project/', (projects) => {
+  $.get('/tender/api/project/', (projects) => {
     num_of_projects = projects.length
     projects
       .filter((project, idx) => idx < 10)
@@ -26,7 +26,7 @@ $(document).ready(() => {
     }
   })
 
-  $.get('/tender/json/company/', (companies) => {
+  $.get('/tender/api/company/', (companies) => {
     num_of_companies = companies.length
     companies
       .filter((company, idx) => idx < 10)
@@ -69,7 +69,7 @@ $(document).ready(() => {
   $('#new-project-form').submit((e) => {
     e.preventDefault()
     $.ajax({
-      url: '/tender/json/project/',
+      url: '/tender/api/project/',
       type: 'POST',
       credentials: 'include',
       dataType: 'json',
@@ -101,7 +101,7 @@ $(document).ready(() => {
   $('#new-company-form').submit((e) => {
     e.preventDefault()
     $.ajax({
-      url: '/tender/json/company/',
+      url: '/tender/api/company/',
       type: 'POST',
       credentials: 'include',
       dataType: 'json',

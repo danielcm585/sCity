@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $.get('/tender/json/company/', (companies) => {
+  $.get('/tender/api/company/', (companies) => {
     companies.forEach((company, idx) => {
       $('#companies-section').append(`
         <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
@@ -28,7 +28,7 @@ $(document).ready(() => {
   $('#new-company-form').submit((e) => {
     e.preventDefault()
     $.ajax({
-      url: '/tender/json/company/',
+      url: '/tender/api/company/',
       type: 'POST',
       credentials: 'include',
       dataType: 'json',

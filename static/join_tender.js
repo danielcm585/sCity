@@ -2,12 +2,12 @@ let item_id = 0
 let items = []
 
 $(document).ready(() => {
-  $.get(`/tender/json/project/${id}/`, (project) => {
+  $.get(`/tender/api/project/${id}/`, (project) => {
     console.log(project)
     $('#title').text(`New Tender to ${project.title}`)
   })
 
-  $.get('/tender/json/company/mine/', (companies) => {
+  $.get('/tender/api/company/mine/', (companies) => {
     companies.map((company, idx) => {
       console.log(company.id)
       $('#choose-company').append(`
@@ -58,27 +58,23 @@ $(document).ready(() => {
     $('#new-item-modal').addClass('hidden')
   })
 
-  $('#save-tender').click(() => {
-    console.log('HERE')
+  $('#new-tender-form').submit((e) => {
+    e.preventDefault()
     $.ajax({
-      url: `/tender/json/registrant/${id}/`,
+      url: `/tender/api/registrant/${id}/`,
       type: 'POST',
       credentials: 'include',
-      contentType: 'application/json; charset=utf-8',
-      dataType: 'text',
-      data: JSON.stringify({ 
-        company_id: parseInt($('#choose-company').val())
-      }),
+      dataType: 'json',
+      data: $('#new-tender-form').serialize(),
       success: (registrant) => {
         items.forEach((item) => {
           $.ajax({
-            url: '/tender/json/item/',
+            url: '/tender/api/item/',
             type: 'POST',
             credentials: 'include',
-            contentType: 'application/json; charset=utf-8',
-            dataType: 'text',
+            dataType: 'json',
             data: JSON.stringify({
-              registrant_id: registrant.id,
+              registrant: registrant.id,
               ...item
             }),
             error: (err) => alert('Failed to save item')
@@ -87,6 +83,5 @@ $(document).ready(() => {
         location.href = `/tender/project/${id}/`
       }
     })
-    console.log('DONE')
   })
 })
