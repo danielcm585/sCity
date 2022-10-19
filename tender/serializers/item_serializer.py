@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from tender.models.item import Item
+from tender.models.item_model import Item
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:

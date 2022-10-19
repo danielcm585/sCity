@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from tender.models.company import Company
+from tender.models.company_model import Company
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,11 +1,11 @@
 from django.db import models
-from tender.models.company import Company
-from tender.models.project import Project
+from tender.models.company_model import Company
+from tender.models.project_model import Project
 
 class Registrant(models.Model):
     id = models.AutoField(primary_key=True)
-    company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
-    project_id = models.ForeignKey(Project, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     offer_price = models.IntegerField(default=0)
     deal_price = models.IntegerField(null=True)
     registered_at = models.DateTimeField(auto_now_add=True)

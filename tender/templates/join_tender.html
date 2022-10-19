@@ -43,19 +43,25 @@
       </h1>
     </div>
     <div class="mt-4">
-      <div>
-        <p class="mt-6 text-xl">Company</p>
-        <select type="number" name="company_id" id="choose-company" class="form-control mt-2 w-full rounded-lg">
-          
-        </select>
-        <div class="mt-4 flex justify-between items-center">
-          <div>
-            <h2 class="text-xl">
-              Items
-            </h2>
-            <p id="num-of-items" class="text-gray-400 text-xs">
-              0 items
-            </p>
+      <form id="new-tender-form">
+        {% csrf_token %}
+        <div>
+          <p class="mt-6 text-xl">Company</p>
+          <select type="number" name="company" id="choose-company" class="form-control mt-2 w-full rounded-lg">
+            
+          </select>
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <h2 class="text-xl">
+                Items
+              </h2>
+              <p id="num-of-items" class="text-gray-400 text-xs">
+                0 items
+              </p>
+            </div>
+            <button id="new-item-open-button" type="button" class="text-emerald-400 border-2 border-emerald-400 px-3 py-2 rounded-lg hover:bg-gray-200 duration-300">
+              + New Item
+            </button>
           </div>
           <button id="new-item-open-button" type="button" class="text-emerald-400 border-2 border-emerald-400 px-3 py-2 rounded-lg hover:bg-gray-200 duration-300">
             + New Item

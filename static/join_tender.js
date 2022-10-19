@@ -2,13 +2,14 @@ let item_id = 0
 let items = []
 
 $(document).ready(() => {
-  $.get(`/tender/json/project/${id}`, (project) => {
+  $.get(`/tender/json/project/${id}/`, (project) => {
     console.log(project)
     $('#title').text(`New Tender to ${project.title}`)
   })
 
   $.get('/tender/json/company/mine/', (companies) => {
     companies.map((company, idx) => {
+      console.log(company.id)
       $('#choose-company').append(`
         <option value="${company.id}">${company.company_name}</option>
       `)
@@ -60,7 +61,7 @@ $(document).ready(() => {
   $('#save-tender').click(() => {
     console.log('HERE')
     $.ajax({
-      url: '/tender/json/registrant/',
+      url: `/tender/json/registrant/${id}/`,
       type: 'POST',
       credentials: 'include',
       contentType: 'application/json; charset=utf-8',
@@ -83,7 +84,7 @@ $(document).ready(() => {
             error: (err) => alert('Failed to save item')
           })
         })
-        location.href = `/tender/project/${id}`
+        location.href = `/tender/project/${id}/`
       }
     })
     console.log('DONE')

@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from tender.models.project import Project
-from tender.serializers.registrant import RegistrantSerializer
+from tender.models.project_model import Project
+from tender.serializers.registrant_serializer import RegistrantSerializer
 
 class ProjectSerializer(serializers.ModelSerializer):
     registrants = RegistrantSerializer(many=True, read_only=True)

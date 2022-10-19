@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from tender.models.company import Company
+from tender.models.company_model import Company
 
 class CompanyForm(ModelForm):
     class Meta:
