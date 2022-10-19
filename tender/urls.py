@@ -9,6 +9,9 @@ app_name = 'tender'
 
 urlpatterns = [
     path('', dashboard, name='dashboard'),
+    path('test/', test, name='test'),
+    path('test/project/', test_project, name='test_project'),
+    path('test/registrant/', test_registrant, name='test_registrant'),
     path('company/', all_companies, name='all_companies'),
     path('company/<int:id>/', one_company, name='one_company'),
     path('project/', all_projects, name='all_projects'),
