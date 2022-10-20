@@ -7,10 +7,16 @@ from tender.forms.project_form import ProjectForm
 from tender.serializers.project_serializer import ProjectSerializer
 
 def all_projects(request):
-    return render(request, "all_projects.html")
+    context = {
+        'last_login': request.COOKIES.get('last_login')
+    }
+    return render(request, "all_projects.html", context)
 
 def one_project(request, id):
-    context = { 'id': id }
+    context = { 
+        'id': id,
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "one_project.html", context)
 
 @api_view(['GET','POST'])

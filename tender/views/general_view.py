@@ -8,11 +8,16 @@ from tender.serializers.project_serializer import ProjectSerializer
 from tender.serializers.registrant_serializer import RegistrantSerializer
 
 def dashboard(request):
-    context = { 'is_admin': True }
+    context = {
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "tender.html", context)
 
 def test(request):
-    return render(request, "test.html")
+    context = {
+        'last_login': request.COOKIES.get('last_login')
+    }
+    return render(request, "test.html", context)
 
 @api_view(['GET'])
 def test_registrant(request):

@@ -9,7 +9,10 @@ from tender.forms.registrant_form import RegistrantForm
 from tender.serializers.registrant_serializer import RegistrantSerializer
 
 def join_tender(request, id):
-    context = { 'id': id }
+    context = { 
+        'id': id,
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "join_tender.html", context)
 
 @api_view(['GET','POST'])

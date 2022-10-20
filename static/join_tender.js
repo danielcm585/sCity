@@ -37,6 +37,7 @@ $(document).ready(() => {
       description: $('#item-description').val()
     }
     items.push(new_item)
+    
     $('#num-of-items').text(`${items.length} items`)
     $('#items-section').append(`
       <div id="item-${new_item.id}" class="mt-4 p-4 w-full flex justify-between items-center shadow-lg rounded-lg hover:bg-gray-200 duration-300">

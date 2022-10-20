@@ -7,10 +7,16 @@ from tender.forms.company_form import CompanyForm
 from tender.serializers.company_serializer import CompanySerializer
 
 def all_companies(request):
-    return render(request, "all_companies.html")
+    context = { 
+        'last_login': request.COOKIES.get('last_login') 
+    }
+    return render(request, "all_companies.html", context)
 
 def one_company(request, id):
-    context = { 'id': id }
+    context = { 
+        'id': id,
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "one_company.html", context)
 
 @api_view(['GET','POST'])
