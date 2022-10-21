@@ -1,5 +1,6 @@
 $(document).ready(() => {
   $.get(`/tender/api/project/${id}/`, (project) => {
+    console.log(project)
     $('#project-title').text(project.title)
     $('#project-description').text(project.description)
     $('#project-image').append(`
@@ -24,7 +25,7 @@ $(document).ready(() => {
     $('#tender-modal').addClass('hidden')
   })
 
-  $('registrant-form').submit((e) => {
+  $('#registrant-form').submit((e) => {
     e.preventDefault()
     $.ajax({
       url: `/tender/api/registrant/${id}/`,
@@ -33,9 +34,11 @@ $(document).ready(() => {
       dataType: 'json',
       data: $('#registrant-form').serialize(),
       success: (registrant) => {
-        alert(berhasil)
-        console.log(registrant)
         $('#tender-modal').addClass('hidden')
+        location.href = `/tender/registrant/${id}`
+      },
+      error: () => {
+        alert('gagal')
       }
     })
   })

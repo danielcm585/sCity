@@ -29,8 +29,7 @@ def all_projects_api(request):
     
     def post():
         # Create new project (Admin)
-        if (request.user.is_authenticated):
-            # TODO: Check admin
+        if (request.user.is_authenticated and request.user.is_superuser):
             form = ProjectForm(request.POST)
             print(form.is_valid())
             if (form.is_valid()):

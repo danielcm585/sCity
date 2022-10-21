@@ -2,18 +2,8 @@ let item_id = 0
 let items = []
 
 $(document).ready(() => {
-  $.get(`/tender/api/project/${id}/`, (project) => {
-    console.log(project)
-    $('#title').text(`New Tender to ${project.title}`)
-  })
-
-  $.get('/tender/api/company/mine/', (companies) => {
-    companies.map((company, idx) => {
-      console.log(company.id)
-      $('#choose-company').append(`
-        <option value="${company.id}">${company.company_name}</option>
-      `)
-    })
+  $.get(`/tender/api/registrant/${id}/`, (registrant) => {
+    console.log(registrant)
   })
 
   $('#new-item-open-button').click(() => {
