@@ -9,10 +9,6 @@ $(document).ready(() => {
   $.get(`/tender/api/project/${id}/`, (project) => {
     cur_project = project
     num_of_projects = project.registrants.length
-<<<<<<< HEAD
-    is_closed = (project.registrants.filter((registrant) => registrant.isChosen).length > 0)
-=======
->>>>>>> 0cbcf13 (Fix some bugs)
     $('#project-title').text(project.title)
     $('#project-description').text(project.description)
     $('#num-of-registrants').text(`${num_of_projects} registrants`)
