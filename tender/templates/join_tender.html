@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="new-item-modal" class="hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50">
+  <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 bg-white rounded-lg">
+    <div class="flex justify-between items-center border-b-2 border-gray-300 p-4">
+      <h1 class="text-xl font-bold">
+        New Item
+      </h1>
+      <button id="new-item-close-button" type="button" class="bg-white rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-inset focus:ring-indigo-500">
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <form id="new-item-form">
+      <div class="p-4 w-full flex justify-center">
+        <div class="w-full">
+          <p>Item name</p>
+          <input type="text" id="item-name" class="form-control w-full rounded-lg">
+          <p class="mt-4">Item quantity</p>
+          <input type="number" id="item-quantity" class="form-control w-full rounded-lg">
+          <p class="mt-4">Price / 1 item (IDR 0,00)</p>
+          <input type="number" id="item-price" class="form-control w-full rounded-lg">
+          <p class="mt-4">Description</p>
+          <textarea id="item-description" class="form-control w-full rounded-lg"></textarea>
+          <button id="save-item" class="mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="w-full flex justify-center">
+  <div class="mt-6 w-5/6">
+    <div class="flex">
+      <button onclick="history.back()">
+        <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="28px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="28px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "/></svg>
+      </button>
+      <h1 id="title" class="ml-2 text-2xl font-bold">
+        Tender to ...
+      </h1>
+    </div>
+    <div class="mt-4">
+      <form id="new-tender-form">
+        {% csrf_token %}
+        <div>
+          <p class="mt-6 text-xl">Company</p>
+          <p id="company"></p>
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <h2 class="text-xl">
+                Items
+              </h2>
+              <p id="num-of-items" class="text-gray-400 text-xs">
+                0 items
+              </p>
+            </div>
+            <button id="new-item-open-button" type="button" class="text-emerald-400 border-2 border-emerald-400 px-3 py-2 rounded-lg hover:bg-gray-200 duration-300">
+              + New Item
+            </button>
+          </div>
+        </div>
+        <div id="items-section">
+          
+        </div>
+        <button type="submit" class="w-full mt-6 py-2 text-white rounded-lg shadow-lg bg-emerald-400 hover:bg-emerald-600 duration-300">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-red-400 hover:text-red-600"></div>
+
+<script>
+  const registrant_id = {{id}}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'join_tender.js' %}"></script>
+
+{% endblock content %}
