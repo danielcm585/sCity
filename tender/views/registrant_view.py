@@ -56,3 +56,17 @@ def one_registrant_api(request, id):
     if (request.method == 'GET'): return get()
     elif (request.method == 'PUT'): return put()
     elif (request.method == 'POST'): return post()
+
+@api_view(['GET'])
+def choose_registrant_api(request, id):
+    def get():
+        # Choose registrant :id (Admin)
+        if (request.user.is_authenticated and request.user.is_superuser):
+            registrant = Registrant.objects.get(id=id)
+            registrant.isChosen = True
+            registrant.save()
+            registrant_serialized = RegistrantSerializer(instance=registrant)
+            return Response(registrant_serialized.data, status=status.HTTP_200_OK)
+        return Response('You are not admin', status=status.HTTP_401_UNAUTHORIZED)
+
+    if (request.method == 'GET'): return get()

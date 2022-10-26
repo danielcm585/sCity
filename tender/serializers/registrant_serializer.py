@@ -7,4 +7,4 @@ class RegistrantSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Registrant
-        fields = ['id','company','offer_price','deal_price','registered_at','is_chosen']
+        fields = ['id','company','offer_price','registered_at','is_chosen']

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -39,8 +40,8 @@ def all_projects_api(request):
                 )
                 new_project_serialized = ProjectSerializer(instance=new_project)
                 return Response(new_project_serialized.data, status=status.HTTP_201_CREATED)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+            return Response('Input not valid', status=status.HTTP_400_BAD_REQUEST)
+        return Response('You are not admin', status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'GET'): return get()
     elif (request.method == 'POST'): return post()
