@@ -122,7 +122,6 @@ $(document).ready(() => {
             </div>
           `)
         }
-        console.log('HERE')
         if (num_of_projects > 10) {
           $('more-companys').removeClass('hidden')
         }
