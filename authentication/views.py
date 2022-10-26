@@ -18,7 +18,9 @@ def login_user(request):
             return response
         else:
             messages.error(request, "Username atau Password salah!")
-    context = {}
+    context = {
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "login.html", context)
 
 def register_user(request):
@@ -31,7 +33,10 @@ def register_user(request):
             messages.success(request, "Akun telah berhasil dibuat!")
             return redirect("authentication:login")
     
-    context = { "form": form }
+    context = { 
+        "form": form,
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "register.html", context)
 
 def logout_user(request):
