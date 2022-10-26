@@ -2,7 +2,6 @@ let num_of_items = 0
 
 $(document).ready(() => {
   $.get(`/tender/api/registrant/${registrant_id}/`, (registrant) => {
-    console.log(registrant)
     num_of_items = registrant.items.length
   })
 
