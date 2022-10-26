@@ -1,6 +1,5 @@
 $(document).ready(() => {
   $.get(`/tender/api/company/${company_id}`, (company) => {
-    console.log(company)
     $('#company-details').append(`
       <h2 class="text-xl font-bold">PT Name</h2>
       <p id="company_pt_name">${company.company_name}</p>
