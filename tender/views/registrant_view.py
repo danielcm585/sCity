@@ -30,22 +30,20 @@ def one_registrant_api(request, id):
 
     def post():
         # Add new registration to project :id (Company) 
-        print('view')
         if (request.user.is_authenticated):
             form = RegistrantForm(request.POST)
             if (form.is_valid()):
                 company = form.cleaned_data.get('company')
                 company = Company.objects.get(id=company.id)
                 project = Project.objects.get(id=id)
-                print("HERE")
                 if (company != None):
                     new_registrant = Registrant.objects.create(
                         project = project,
-                        company = company
+                        company = company,
+                        offer_price = form.cleaned_data.get('offer_price')
                     )
                     new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
                     return Response(new_registrant_serialized.data, status=status.HTTP_201_CREATED)
-                    return Response(status=status.HTTP_201_CREATED)
                 return Response(status=status.HTTP_400_BAD_REQUEST)
             return Response(status=status.HTTP_400_BAD_REQUEST)
         return Response(status=status.HTTP_401_UNAUTHORIZED)

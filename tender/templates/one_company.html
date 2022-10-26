@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="w-full flex justify-center">
+  <div class="mt-6 w-5/6">
+    <div class="flex items-center">
+      <button onclick="history.back()">
+        <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="28px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="28px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "/></svg>
+      </button>
+      <h1 id="company-name" class="ml-2 text-2xl font-bold">
+        
+      </h1>
+    </div>
+    <div id="company-details" class="mt-6">
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  company_id = {{id}}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'one_company.js' %}"></script>
+
+{% endblock content %}

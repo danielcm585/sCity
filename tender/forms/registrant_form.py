@@ -4,4 +4,4 @@ from tender.models.registrant_model import Registrant
 class RegistrantForm(ModelForm):
     class Meta:
         model = Registrant
-        fields = ['company']
+        fields = ['company','offer_price']

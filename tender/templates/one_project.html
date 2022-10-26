@@ -18,10 +18,12 @@
     <div class="p-4 w-full flex justify-center">
       <form id="registrant-form" class="w-full">
         {% csrf_token %}
-        <p class="text-xl">Company</p>
-        <select type="number" name="company" id="choose-company" class="form-control mt-2 w-full rounded-lg">
+        <p>Company</p>
+        <select name="company" id="choose-company" class="form-control w-full rounded-lg">
           
         </select>
+        <p class="mt-4">Offered Price</p>
+        <input type="number" name="offer_price" class="form-control w-full rounded-lg">
         <button type="submit" class="mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
           Next
         </button>
@@ -51,6 +53,12 @@
       <p id="project-description" class="text-gray-500">
         
       </p>
+    </div>
+    <p id="num-of-registrants" class="mt-8 text-xl font-bold">
+      Registrants
+    </p>
+    <div id="project-registrants" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
+      
     </div>
   </div>
 </div>
