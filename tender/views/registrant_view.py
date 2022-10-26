@@ -75,6 +75,7 @@ def choose_registrant_api(request, id):
         # Choose registrant :id (Admin)
         if (request.user.is_authenticated and request.user.is_superuser):
             registrant = Registrant.objects.get(id=id)
+<<<<<<< HEAD
             project = Project.objects.get(id=registrant.project_id)
             if (registrant != None):
                 registrant.is_chosen = True
@@ -85,5 +86,12 @@ def choose_registrant_api(request, id):
                 return Response(status=status.HTTP_200_OK)
             return Response('Registrant not found', status=status.HTTP_404_NOT_FOUND)
         return Response('You are not an admin', status=status.HTTP_401_UNAUTHORIZED)
+=======
+            registrant.isChosen = True
+            registrant.save()
+            registrant_serialized = RegistrantSerializer(instance=registrant)
+            return Response(registrant_serialized.data, status=status.HTTP_200_OK)
+        return Response('You are not admin', status=status.HTTP_401_UNAUTHORIZED)
+>>>>>>> f3f435f (Push new features)
 
     if (request.method == 'GET'): return get()
