@@ -7,25 +7,10 @@ const parseIDR = (amount) => {
 $(document).ready(() => {
   $.get(`/tender/api/project/${id}/`, (project) => {
     num_of_projects = project.registrants.length
-    is_closed = (project.registrants.filter((registrant) => registrant.isChosen).length != 0)
-    console.log(is_closed)
     $('#project-title').text(project.title)
     $('#project-description').text(project.description)
     $('#project-image').append(`
       <img src="${project.photo}" class="mt-4 w-full rounded-lg">
-    `)
-    $('#tender-button').html(`
-      ${
-        is_closed ? `
-          <button id="tender-modal-open-button" class="bg-emerald-400 text-white py-2 px-3 rounded-lg shadow-md hover:bg-emerald-600 duration-300" disabled>
-            Tender
-          </button>
-        ` : `
-          <button id="tender-modal-open-button" class="bg-emerald-400 text-white py-2 px-3 rounded-lg shadow-md hover:bg-emerald-600 duration-300">
-            Tender
-          </button>
-        `
-      }
     `)
     $('#num-of-registrants').text(`${num_of_projects} registrants`)
     project.registrants.forEach((registrant) => {
@@ -46,13 +31,13 @@ $(document).ready(() => {
             </p>
           </div>
           ${
-            is_closed ? (
-              registrant.isChosen ? `
+            project.is_closed ? (
+              registrant.is_chosen ? `
                 <p class="p-2 rounded-lg bg-emerald-400 text-xs text-white text-center">
                   CHOSEN
                 </p>
               ` : `
-                <button class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300" disabled>
+                <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300" disabled>
                   CHOOSE
                 </button>
               `
@@ -64,7 +49,6 @@ $(document).ready(() => {
           }
         </div>
       `)
-      // FIXME: Cannot click
       $(`#choose-registrant-${registrant.id}`).click(() => {
         $.ajax({
           url: `/tender/api/registrant/choose/${registrant.id}`,
@@ -118,7 +102,7 @@ $(document).ready(() => {
   })
 
   $.get('/tender/api/company/mine/', (companies) => {
-    companies.map((company, idx) => {
+    companies.map((company) => {
       $('#choose-company').append(`
         <option value="${company.id}">${company.company_name}</option>
       `)
