@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -36,17 +37,19 @@ def one_registrant_api(request, id):
                 company = form.cleaned_data.get('company')
                 company = Company.objects.get(id=company.id)
                 project = Project.objects.get(id=id)
-                if (company != None):
-                    new_registrant = Registrant.objects.create(
-                        project = project,
-                        company = company,
-                        offer_price = form.cleaned_data.get('offer_price')
-                    )
-                    new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
-                    return Response(new_registrant_serialized.data, status=status.HTTP_201_CREATED)
-                return Response(status=status.HTTP_400_BAD_REQUEST)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+                if (company != None and project != None):
+                    if (not project.is_closed):
+                        new_registrant = Registrant.objects.create(
+                            project = project,
+                            company = company,
+                            offer_price = form.cleaned_data.get('offer_price')
+                        )
+                        new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
+                        return Response(new_registrant_serialized.data, status=status.HTTP_201_CREATED)
+                    return Response('Project is closed', status=status.HTTP_400_BAD_REQUEST)
+                return Response('Company or project not found', status=status.HTTP_400_BAD_REQUEST)
+            return Response('Input invalid', status=status.HTTP_400_BAD_REQUEST)
+        return Response('You are not an admin', status=status.HTTP_401_UNAUTHORIZED)
 
     def put():
         # Edit registration :id (Company)
@@ -63,10 +66,15 @@ def choose_registrant_api(request, id):
         # Choose registrant :id (Admin)
         if (request.user.is_authenticated and request.user.is_superuser):
             registrant = Registrant.objects.get(id=id)
-            registrant.isChosen = True
-            registrant.save()
-            registrant_serialized = RegistrantSerializer(instance=registrant)
-            return Response(registrant_serialized.data, status=status.HTTP_200_OK)
-        return Response('You are not admin', status=status.HTTP_401_UNAUTHORIZED)
+            project = Project.objects.get(id=registrant.project_id)
+            if (registrant != None):
+                registrant.is_chosen = True
+                project.is_closed = True
+                project.closed_at = datetime.now()
+                registrant.save()
+                project.save()
+                return Response(status=status.HTTP_200_OK)
+            return Response('Registrant not found', status=status.HTTP_404_NOT_FOUND)
+        return Response('You are not an admin', status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'GET'): return get()
