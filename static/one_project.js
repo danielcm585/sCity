@@ -9,7 +9,8 @@ $(document).ready(() => {
   $.get(`/tender/api/project/${id}/`, (project) => {
     cur_project = project
     num_of_projects = project.registrants.length
-    is_closed = (project.registrants.filter((registrant) => registrant.isChosen).length > 0)
+    is_closed = (project.registrants.filter((registrant) => registrant.isChosen).length != 0)
+    console.log(is_closed)
     $('#project-title').text(project.title)
     $('#project-description').text(project.description)
     $('#project-image').append(`
@@ -65,7 +66,6 @@ $(document).ready(() => {
         </div>
       `)
       $(`#choose-registrant-${registrant.id}`).click(() => {
-        alert('woy')
         $.ajax({
           url: `/tender/api/registrant/choose/${registrant.id}/`,
           type: 'GET',
