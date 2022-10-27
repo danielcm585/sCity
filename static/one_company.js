@@ -11,6 +11,10 @@ $(document).ready(() => {
     company.projects.forEach((registrant) => {
       $('#projects-section').append(`
         <div onclick="location.href='/tender/project/${registrant.project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
+<<<<<<< HEAD
+=======
+          <img src="${registrant.project.photo}" class="rounded-t-lg">
+>>>>>>> 0cbcf13 (Fix some bugs)
           <div class="p-4 w-full rounded-b-lg">
             <h1 class="font-bold text-xl text-center">
               ${registrant.project.title}
