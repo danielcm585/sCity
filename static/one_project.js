@@ -15,17 +15,9 @@ $(document).ready(() => {
       <img src="${project.photo}" class="mt-4 w-full rounded-lg">
     `)
     $('#tender-button').html(`
-      ${
-        is_closed ? `
-          <button class="bg-emerald-400 text-white py-2 px-3 rounded-lg shadow-md hover:bg-emerald-600 duration-300" disabled>
-            Tender
-          </button>
-        ` : `
           <button id="tender-modal-open-button" class="bg-emerald-400 text-white py-2 px-3 rounded-lg shadow-md hover:bg-emerald-600 duration-300">
             Tender
           </button>
-        `
-      }
     `)
     $('#num-of-registrants').text(`${num_of_projects} registrants`)
     project.registrants.forEach((registrant) => {
