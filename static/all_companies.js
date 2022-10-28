@@ -21,7 +21,7 @@ $(document).ready(() => {
     $('#new-company-modal').removeClass('hidden')
   })
   
-  $('#new-company-close-button').click(() => {
+  $('.new-company-close-button').click(() => {
     $('#new-company-modal').addClass('hidden')
   })
 

@@ -9,7 +9,7 @@
       <h1 class="text-xl font-bold">
         Choose Company
       </h1>
-      <button id="tender-modal-close-button" type="button" class="bg-white rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-inset focus:ring-indigo-500">
+      <button type="button" class="tender-modal-close-button bg-white rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-inset focus:ring-indigo-500">
         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -18,15 +18,25 @@
     <div class="p-4 w-full flex justify-center">
       <form id="registrant-form" class="w-full">
         {% csrf_token %}
-        <p>Company</p>
-        <select name="company" id="choose-company" class="form-control w-full rounded-lg">
-          
-        </select>
-        <p class="mt-4">Offered Price</p>
-        <input type="number" name="offer_price" class="form-control w-full rounded-lg">
-        <button type="submit" class="mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
-          Next
-        </button>
+        <div>
+          <p>Company</p>
+          <select name="company" id="choose-company" class="form-control w-full rounded-lg">
+            
+          </select>
+          <p class="mt-4">Offered Price</p>
+          <input type="number" name="offer_price" class="form-control w-full rounded-lg">
+        </div>
+        <div class="flex justify-between">
+          <div></div>
+          <div class="flex">
+            <button type="button" class="tender-modal-close-button mt-4 bg-gray-200 px-4 py-2 rounded-lg shadow-md hover:bg-gray-400 duration-300">
+              Cancel
+            </button>
+            <button type="submit" class="ml-2 mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
+              Save
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   </div>

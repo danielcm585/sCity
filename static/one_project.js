@@ -41,12 +41,12 @@ $(document).ready(() => {
                   CHOSEN
                 </p>
               ` : `
-                <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300" disabled>
+                <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-gray-400 text-xs text-white hover:bg-gray-600 duration-300" disabled>
                   CHOOSE
                 </button>
               `
             ) : `
-              <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300" disabled>
+              <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300">
                 CHOOSE
               </button>
             `
@@ -56,8 +56,8 @@ $(document).ready(() => {
       $(`#choose-registrant-${registrant.id}`).click(() => {
         alert('woy')
         $.ajax({
-          url: `/tender/api/registrant/choose/${registrant.id}`,
-          type: 'PUT',
+          url: `/tender/api/registrant/choose/${registrant.id}/`,
+          type: 'GET',
           credentials: 'include',
           dataType: 'json',
           success: (registrant) => {
@@ -78,6 +78,7 @@ $(document).ready(() => {
             setTimeout(() => {
               $('#js-message').fadeOut('slow');
             }, 4000)
+            location.href = `/tender/project/${id}`
           },
           error: (err) => {
             $('#new-project-modal').addClass('hidden')
@@ -118,7 +119,7 @@ $(document).ready(() => {
     $('#tender-modal').removeClass('hidden')
   })
 
-  $('#tender-modal-close-button').click(() => {
+  $('.tender-modal-close-button').click(() => {
     $('#tender-modal').addClass('hidden')
   })
 
@@ -134,16 +135,38 @@ $(document).ready(() => {
         $('#tender-modal').addClass('hidden')
         $('#num-of-registrants').text(`${++num_of_projects} registrants`)
         $('#project-registrants').append(`
-          <div onclick="location.href='/tender/company/${registrant.company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
+          <div id="registrant-${registrant.id}" class="shadow-md rounded-lg flex-col justify-center p-2 hover:bg-gray-200 duration-300">
             <img src="${registrant.company.photo}" class="rounded-t-lg">
-            <div class="p-4 w-full rounded-b-lg">
-              <h1 class="font-bold text-xl text-center">
-                ${registrant.company.company_name}
-              </h1>
+            <div class="p-4 w-full flex-col items-center rounded-b-lg">
+              <a href="/tender/company/${registrant.company.id}">
+                <h1 class="font-bold text-xl text-center">
+                  ${registrant.company.company_name}
+                </h1>
+              </a>
               <p class="text-gray-500 text-center text-ellipsis overflow-hidden">
                 ${registrant.company.pt_name}
               </p>
+              <p class="text-emerald-400 text-center font-bold">
+                ${parseIDR(registrant.offer_price)}
+              </p>
             </div>
+            ${
+              project.is_closed ? (
+                registrant.is_chosen ? `
+                  <p class="p-2 rounded-lg bg-emerald-400 text-xs text-white text-center">
+                    CHOSEN
+                  </p>
+                ` : `
+                  <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-gray-400 text-xs text-white hover:bg-gray-600 duration-300" disabled>
+                    CHOOSE
+                  </button>
+                `
+              ) : `
+                <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300">
+                  CHOOSE
+                </button>
+              `
+            }
           </div>
         `)
 

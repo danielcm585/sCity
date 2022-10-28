@@ -54,7 +54,7 @@ $(document).ready(() => {
     $('#new-project-modal').removeClass('hidden')
   })
   
-  $('#new-project-close-button').click(() => {
+  $('.new-project-close-button').click(() => {
     $('#new-project-modal').addClass('hidden')
   })
   
@@ -62,7 +62,7 @@ $(document).ready(() => {
     $('#new-company-modal').removeClass('hidden')
   })
   
-  $('#new-company-close-button').click(() => {
+  $('.new-company-close-button').click(() => {
     $('#new-company-modal').addClass('hidden')
   })
 
