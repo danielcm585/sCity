@@ -7,6 +7,5 @@ class Registrant(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='projects')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='registrants')
     offer_price = models.IntegerField()
-    deal_price = models.IntegerField(null=True)
     registered_at = models.DateTimeField(auto_now_add=True)
     is_chosen = models.BooleanField(default=False)
