@@ -1,4 +1,5 @@
 let num_of_projects = 0
+let cur_project = null
 
 const parseIDR = (amount) => {
   return "IDR "+amount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".") +",00"
@@ -6,6 +7,7 @@ const parseIDR = (amount) => {
 
 $(document).ready(() => {
   $.get(`/tender/api/project/${id}/`, (project) => {
+    cur_project = project
     num_of_projects = project.registrants.length
 <<<<<<< HEAD
     is_closed = (project.registrants.filter((registrant) => registrant.isChosen).length > 0)
@@ -13,14 +15,10 @@ $(document).ready(() => {
 >>>>>>> 0cbcf13 (Fix some bugs)
     $('#project-title').text(project.title)
     $('#project-description').text(project.description)
-    $('#project-image').append(`
-      <img src="${project.photo}" class="mt-4 w-full rounded-lg">
-    `)
     $('#num-of-registrants').text(`${num_of_projects} registrants`)
     project.registrants.forEach((registrant) => {
       $('#project-registrants').append(`
         <div id="registrant-${registrant.id}" class="shadow-md rounded-lg flex-col justify-center p-2 hover:bg-gray-200 duration-300">
-          <img src="${registrant.company.photo}" class="rounded-t-lg">
           <div class="p-4 w-full flex-col items-center rounded-b-lg">
             <a href="/tender/company/${registrant.company.id}">
               <h1 class="font-bold text-xl text-center">
@@ -132,11 +130,11 @@ $(document).ready(() => {
       dataType: 'json',
       data: $('#registrant-form').serialize(),
       success: (registrant) => {
+        console.log(registrant)
         $('#tender-modal').addClass('hidden')
         $('#num-of-registrants').text(`${++num_of_projects} registrants`)
         $('#project-registrants').append(`
           <div id="registrant-${registrant.id}" class="shadow-md rounded-lg flex-col justify-center p-2 hover:bg-gray-200 duration-300">
-            <img src="${registrant.company.photo}" class="rounded-t-lg">
             <div class="p-4 w-full flex-col items-center rounded-b-lg">
               <a href="/tender/company/${registrant.company.id}">
                 <h1 class="font-bold text-xl text-center">
@@ -151,7 +149,7 @@ $(document).ready(() => {
               </p>
             </div>
             ${
-              project.is_closed ? (
+              cur_project.is_closed ? (
                 registrant.is_chosen ? `
                   <p class="p-2 rounded-lg bg-emerald-400 text-xs text-white text-center">
                     CHOSEN
@@ -169,7 +167,23 @@ $(document).ready(() => {
             }
           </div>
         `)
-
+        $('#message-container').html(`
+          <div id="js-message" class="absolute top-16 right-4">
+            <div class="mt-4 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
+              <div class="text-green-500 rounded-full bg-white mr-3">
+                <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                </svg>
+              </div>
+              <div class="text-white max-w-xs mr-2">
+                Registration success
+              </div>
+            </div>
+          </div>
+        `)
+        setTimeout(() => {
+          $('#js-message').fadeOut('slow');
+        }, 4000)
       },
       error: (err) => {
         $('#tender-modal').addClass('hidden')
