@@ -3,7 +3,6 @@ $(document).ready(() => {
     companies.forEach((company, idx) => {
       $('#companies-section').append(`
         <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
-          <img src="${company.photo}" class="rounded-t-lg">
           <div class="p-4 w-full rounded-b-lg">
             <h1 class="font-bold text-xl text-center">
               ${company.company_name}
@@ -36,7 +35,6 @@ $(document).ready(() => {
       success: (company) => {
         $('#companies-section').append(`
           <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center">
-            <img src="${company.photo}" class="rounded-t-lg">
             <div class="p-4 w-full rounded-b-lg">
               <h1 class="font-bold text-xl text-center">
                 ${company.company_name}
