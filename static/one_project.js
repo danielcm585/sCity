@@ -11,9 +11,6 @@ $(document).ready(() => {
     num_of_projects = project.registrants.length
     $('#project-title').text(project.title)
     $('#project-description').text(project.description)
-    $('#project-image').append(`
-      <img src="${project.photo}" class="mt-4 w-full rounded-lg">
-    `)
     $('#num-of-registrants').text(`${num_of_projects} registrants`)
     project.registrants.forEach((registrant) => {
       $('#project-registrants').append(`
