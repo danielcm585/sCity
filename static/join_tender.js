@@ -9,7 +9,7 @@ $(document).ready(() => {
     $('#new-item-modal').removeClass('hidden')
   })
   
-  $('#new-item-close-button').click(() => {
+  $('.new-item-close-button').click(() => {
     $('#new-item-modal').addClass('hidden')
   })
 

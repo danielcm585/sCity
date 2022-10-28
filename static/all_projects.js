@@ -22,7 +22,7 @@ $(document).ready(() => {
     $('#new-project-modal').removeClass('hidden')
   })
   
-  $('#new-project-close-button').click(() => {
+  $('.new-project-close-button').click(() => {
     $('#new-project-modal').addClass('hidden')
   })
   
