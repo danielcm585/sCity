@@ -19,7 +19,7 @@
 				<div id="message" class="absolute top-16 right-4">
 					{% for message in messages %}
 						{% if message.tags == 'success' %}
-							<div class="mt-10 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
+							<div class="mt-4 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
 								<div class="text-green-500 rounded-full bg-white mr-3">
 									<svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
@@ -45,21 +45,24 @@
 					{% endfor %}
 				</div>
 			{% endif %}
-			<nav id="navbar" class="sticky top-0 py-3 px-6 xl:px-40 bg-emerald-400 flex justify-center">
+			<div id="message-container">
+
+			</div>
+			<nav id="navbar" class="sticky top-0 py-3 px-6 xl:px-40 bg-emerald-400 flex justify-center z-10">
 				<div class="w-full lg:w-11/12 xl:w-full flex justify-between items-center">
 					<a href="/">
-						<h1 class="text-white text-3xl font-extrabold">
+						<h1 class="text-white text-3xl font-extrabold hover:text-gray-500 duration-300">
 							sCity
 						</h1>
 					</a>
-					<button id="drawer-open-button" type="button" class="xl:hidden">
+					<button id="drawer-open-button" type="button" class="xl:hidden hover:scale-110 duration-300">
 						<?xml version="1.0" ?><svg fill="none" height="40" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
 					</button>
 					<div class="hidden xl:flex">
 						{% if last_login %}
 							<div>
 								<a href="/authentication/logout">
-									<h1 class="text-xl font-bold text-white">
+									<h1 class="text-xl font-bold text-white hover:text-gray-500 duration-300">
 										Logout
 									</h1>
 									<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
@@ -68,7 +71,7 @@
 						{% else %}
 							<div>
 								<a href="/authentication/login">
-									<h1 class="text-xl font-bold text-white group transition duration-300">
+									<h1 class="text-xl font-bold text-white group transition hover:text-gray-500 duration-300">
 										Login
 									</h1>
 									<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
@@ -76,7 +79,7 @@
 							</div>
 							<div class="ml-8">
 								<a href="/authentication/register">
-									<h1 class="text-xl font-bold text-white">
+									<h1 class="text-xl font-bold text-white hover:text-gray-500 duration-300">
 										Register
 									</h1>
 									<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
@@ -97,7 +100,7 @@
 					{% if last_login %}
 						<div>
 							<a href="/authentication/logout">
-								<h1 class="text-3xl font-bold text-emerald-400">
+								<h1 class="text-3xl font-bold">
 									Logout
 								</h1>
 							</a>

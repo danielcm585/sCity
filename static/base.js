@@ -1,6 +1,5 @@
 $(document).ready(() => {
   $('#drawer-open-button').click(() => {
-    console.log('OPEN')
     $('#drawer').removeClass('right-[-100vw]')
     $('#drawer').addClass('right-0')
   })
@@ -9,6 +8,14 @@ $(document).ready(() => {
     $('#drawer').removeClass('right-0')
     $('#drawer').addClass('right-[-100vw]')
   })
+
+  setTimeout(function() {
+    $('#message').fadeOut('slow');
+  }, 4000)
+
+//   $('.del-msg').live('click',function(){
+//     $('.del-msg').parent().attr('style', 'display:none;');
+// })
 })
 
 // FIXME: Fix the message timeout
