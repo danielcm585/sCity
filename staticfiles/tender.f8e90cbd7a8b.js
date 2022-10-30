@@ -9,10 +9,6 @@ $(document).ready(() => {
       .forEach((project, idx) => {
         $('#projects-section').append(`
           <div onclick="location.href='/tender/project/${project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
-<<<<<<< HEAD
-            <img src="${project.photo}" class="rounded-t-lg">
-=======
->>>>>>> ba05b7e (Collect static)
             <div class="p-4 w-full rounded-b-lg">
               <h1 class="font-bold text-xl text-center">
                 ${project.title}
@@ -35,12 +31,7 @@ $(document).ready(() => {
       .filter((company, idx) => idx < 10)
       .forEach((company, idx) => {
         $('#companies-section').append(`
-<<<<<<< HEAD
-          <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
-            <img src="${company.photo}" class="rounded-t-lg">
-=======
           <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
->>>>>>> ba05b7e (Collect static)
             <div class="p-4 w-full rounded-b-lg">
               <h1 class="font-bold text-xl text-center">
                 ${company.company_name}
@@ -61,11 +52,7 @@ $(document).ready(() => {
     $('#new-project-modal').removeClass('hidden')
   })
   
-<<<<<<< HEAD
-  $('#new-project-close-button').click(() => {
-=======
   $('.new-project-close-button').click(() => {
->>>>>>> ba05b7e (Collect static)
     $('#new-project-modal').addClass('hidden')
   })
   
@@ -73,11 +60,7 @@ $(document).ready(() => {
     $('#new-company-modal').removeClass('hidden')
   })
   
-<<<<<<< HEAD
-  $('#new-company-close-button').click(() => {
-=======
   $('.new-company-close-button').click(() => {
->>>>>>> ba05b7e (Collect static)
     $('#new-company-modal').addClass('hidden')
   })
 
@@ -93,10 +76,6 @@ $(document).ready(() => {
         if (++num_of_projects <= 10) {
           $('#projects-section').append(`
             <div onclick="location.href='/tender/project/${project.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
-<<<<<<< HEAD
-              <img src="${project.photo}" class="rounded-t-lg">
-=======
->>>>>>> ba05b7e (Collect static)
               <div class="p-4 w-full rounded-b-lg">
                 <h1 class="font-bold text-xl text-center">
                   ${project.title}
@@ -107,8 +86,6 @@ $(document).ready(() => {
               </div>
             </div>
           `)
-<<<<<<< HEAD
-=======
           $('#message-container').html(`
             <div id="js-message" class="absolute top-16 right-4">
               <div class="mt-4 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
@@ -126,14 +103,11 @@ $(document).ready(() => {
           setTimeout(() => {
             $('#js-message').fadeOut('slow');
           }, 4000)
->>>>>>> ba05b7e (Collect static)
         }
         if (num_of_projects > 10) {
           $('more-projects').removeClass('hidden')
         }
         $('#new-project-modal').addClass('hidden')
-<<<<<<< HEAD
-=======
       },
       error: (err) => {
         $('#new-project-modal').addClass('hidden')
@@ -155,7 +129,6 @@ $(document).ready(() => {
         setTimeout(() => {
           $('#js-message').fadeOut('slow');
         }, 4000)
->>>>>>> ba05b7e (Collect static)
       }
     })
   })
@@ -172,10 +145,6 @@ $(document).ready(() => {
         if (++num_of_companies <= 10) {
           $('#companies-section').append(`
             <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center ">
-<<<<<<< HEAD
-              <img src="${company.photo}" class="rounded-t-lg">
-=======
->>>>>>> ba05b7e (Collect static)
               <div class="p-4 w-full rounded-b-lg">
                 <h1 class="font-bold text-xl text-center">
                   ${company.company_name}
@@ -187,16 +156,10 @@ $(document).ready(() => {
             </div>
           `)
         }
-<<<<<<< HEAD
-        console.log('HERE')
-=======
->>>>>>> ba05b7e (Collect static)
         if (num_of_projects > 10) {
           $('more-companys').removeClass('hidden')
         }
         $('#new-company-modal').addClass('hidden')
-<<<<<<< HEAD
-=======
         $('#message-container').html(`
           <div id="js-message" class="absolute top-16 right-4">
             <div class="mt-4 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
@@ -235,7 +198,6 @@ $(document).ready(() => {
         setTimeout(() => {
           $('#js-message').fadeOut('slow');
         }, 4000)
->>>>>>> ba05b7e (Collect static)
       }
     })
   })

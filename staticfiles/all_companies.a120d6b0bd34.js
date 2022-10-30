@@ -1,62 +1,51 @@
-let num_of_items = 0
-
 $(document).ready(() => {
-  $.get(`/tender/api/registrant/${registrant_id}/`, (registrant) => {
-<<<<<<< HEAD
-    console.log(registrant)
-=======
->>>>>>> ba05b7e (Collect static)
-    num_of_items = registrant.items.length
+  $.get('/tender/api/company/', (companies) => {
+    companies.forEach((company, idx) => {
+      $('#companies-section').append(`
+        <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center hover:bg-gray-200 duration-300">
+          <div class="p-4 w-full rounded-b-lg">
+            <h1 class="font-bold text-xl text-center">
+              ${company.company_name}
+            </h1>
+            <p class="text-gray-500 text-center text-ellipsis overflow-hidden">
+              ${company.pt_name}
+            </p>
+          </div>
+        </div>
+      `)
+    })
   })
 
-  $('#new-item-open-button').click(() => {
-    $('#new-item-modal').removeClass('hidden')
+  $('#new-company-open-button').click(() => {
+    $('#new-company-modal').removeClass('hidden')
   })
   
-<<<<<<< HEAD
-  $('#new-item-close-button').click(() => {
-=======
-  $('.new-item-close-button').click(() => {
->>>>>>> ba05b7e (Collect static)
-    $('#new-item-modal').addClass('hidden')
+  $('.new-company-close-button').click(() => {
+    $('#new-company-modal').addClass('hidden')
   })
 
-  $('#new-item-form').submit((e) => {
-    const parseIDR = (amount) => {
-      return "IDR "+amount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".") +",00"
-    }
-
+  $('#new-company-form').submit((e) => {
     e.preventDefault()
     $.ajax({
-      url: `/tender/api/item/${id}/`,
+      url: '/tender/api/company/',
       type: 'POST',
       credentials: 'include',
       dataType: 'json',
-      data: $('#new-item-form').serialize(),
-      success: (item) => {
-        $('#num-of-items').text(`${++num_of_items} items`)
-        $('#items-section').append(`
-          <div id="item-${item.id}" class="mt-4 p-4 w-full flex justify-between items-center shadow-lg rounded-lg hover:bg-gray-200 duration-300">
-            <div>
-              <p class="font-bold text-xl">${item.quantity} ${item.name}</p>
-              <p class="text-gray-400">${item.description}</p>
-              <p class="text-emerald-400">${parseIDR(item.price*item.quantity)}</p>
+      data: $('#new-company-form').serialize(),
+      success: (company) => {
+        $('#companies-section').append(`
+          <div onclick="location.href='/tender/company/${company.id}'" class="shadow-md rounded-lg flex-col justify-center">
+            <div class="p-4 w-full rounded-b-lg">
+              <h1 class="font-bold text-xl text-center">
+                ${company.company_name}
+              </h1>
+              <p class="text-gray-500 text-center text-ellipsis overflow-hidden">
+                ${company.pt_name}
+              </p>
             </div>
-            <button id="delete-item-${item.id}" type="button" class="text-red-400 hover:text-red-600 duration-300">
-              Delete
-            </button>
           </div>
         `)
-        $(`#delete-item-${item.id}`).click(() => {
-          items = items.filter((item) => item.id !== item.id)
-          $(`#item-${item.id}`).addClass('hidden')
-          $('#num-of-items').text(`${items.length} items`)
-        })
-        $('#new-item-modal').addClass('hidden')
-<<<<<<< HEAD
-      },
-      error: () => alert('gagal')
-=======
+        $('#new-company-modal').addClass('hidden')
         $('#message-container').html(`
           <div id="js-message" class="absolute top-16 right-4">
             <div class="mt-4 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
@@ -66,7 +55,7 @@ $(document).ready(() => {
                 </svg>
               </div>
               <div class="text-white max-w-xs mr-2">
-                Registered successfully
+                Company created
               </div>
             </div>
           </div>
@@ -96,7 +85,6 @@ $(document).ready(() => {
           $('#js-message').fadeOut('slow');
         }, 4000)
       }
->>>>>>> ba05b7e (Collect static)
     })
   })
 })

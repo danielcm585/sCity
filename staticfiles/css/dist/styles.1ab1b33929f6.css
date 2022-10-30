@@ -854,13 +854,8 @@ select {
   margin-right: auto;
 }
 
-<<<<<<< HEAD
-.mt-10 {
-  margin-top: 2.5rem;
-=======
 .mt-4 {
   margin-top: 1rem;
->>>>>>> ba05b7e (Collect static)
 }
 
 .mr-2 {
@@ -871,13 +866,6 @@ select {
   margin-right: 0.75rem;
 }
 
-<<<<<<< HEAD
-.mt-4 {
-  margin-top: 1rem;
-}
-
-=======
->>>>>>> ba05b7e (Collect static)
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -926,13 +914,10 @@ select {
   margin-top: 3rem;
 }
 
-<<<<<<< HEAD
-=======
 .mt-10 {
   margin-top: 2.5rem;
 }
 
->>>>>>> ba05b7e (Collect static)
 .mt-28 {
   margin-top: 7rem;
 }
@@ -1118,14 +1103,6 @@ select {
   border-color: rgb(52 211 153 / var(--tw-border-opacity));
 }
 
-<<<<<<< HEAD
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
-=======
->>>>>>> ba05b7e (Collect static)
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1165,27 +1142,21 @@ select {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-<<<<<<< HEAD
-=======
 .bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
->>>>>>> ba05b7e (Collect static)
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-<<<<<<< HEAD
-=======
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
->>>>>>> ba05b7e (Collect static)
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1275,14 +1246,6 @@ select {
   line-height: 1rem;
 }
 
-<<<<<<< HEAD
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-=======
->>>>>>> ba05b7e (Collect static)
 .font-extrabold {
   font-weight: 800;
 }
@@ -1407,11 +1370,6 @@ select {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-<<<<<<< HEAD
-.hover\:bg-red-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-=======
 .hover\:bg-gray-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
@@ -1420,7 +1378,6 @@ select {
 .hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
->>>>>>> ba05b7e (Collect static)
 }
 
 .hover\:text-gray-500:hover {
@@ -1428,28 +1385,14 @@ select {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-<<<<<<< HEAD
-.hover\:text-red-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
-=======
->>>>>>> ba05b7e (Collect static)
 .hover\:text-emerald-600:hover {
   --tw-text-opacity: 1;
   color: rgb(5 150 105 / var(--tw-text-opacity));
 }
 
-<<<<<<< HEAD
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-=======
 .hover\:text-red-600:hover {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
->>>>>>> ba05b7e (Collect static)
 }
 
 .focus\:outline-none:focus {

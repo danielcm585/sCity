@@ -2,10 +2,6 @@ let num_of_items = 0
 
 $(document).ready(() => {
   $.get(`/tender/api/registrant/${registrant_id}/`, (registrant) => {
-<<<<<<< HEAD
-    console.log(registrant)
-=======
->>>>>>> ba05b7e (Collect static)
     num_of_items = registrant.items.length
   })
 
@@ -13,11 +9,7 @@ $(document).ready(() => {
     $('#new-item-modal').removeClass('hidden')
   })
   
-<<<<<<< HEAD
-  $('#new-item-close-button').click(() => {
-=======
   $('.new-item-close-button').click(() => {
->>>>>>> ba05b7e (Collect static)
     $('#new-item-modal').addClass('hidden')
   })
 
@@ -53,10 +45,6 @@ $(document).ready(() => {
           $('#num-of-items').text(`${items.length} items`)
         })
         $('#new-item-modal').addClass('hidden')
-<<<<<<< HEAD
-      },
-      error: () => alert('gagal')
-=======
         $('#message-container').html(`
           <div id="js-message" class="absolute top-16 right-4">
             <div class="mt-4 mr-2 flex items-center rounded-lg bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
@@ -96,7 +84,6 @@ $(document).ready(() => {
           $('#js-message').fadeOut('slow');
         }, 4000)
       }
->>>>>>> ba05b7e (Collect static)
     })
   })
 })

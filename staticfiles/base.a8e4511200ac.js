@@ -8,8 +8,6 @@ $(document).ready(() => {
     $('#drawer').removeClass('right-0')
     $('#drawer').addClass('right-[-100vw]')
   })
-<<<<<<< HEAD
-=======
 
   setTimeout(function() {
     $('#message').fadeOut('slow');
@@ -18,7 +16,6 @@ $(document).ready(() => {
 //   $('.del-msg').live('click',function(){
 //     $('.del-msg').parent().attr('style', 'display:none;');
 // })
->>>>>>> ba05b7e (Collect static)
 })
 
 // FIXME: Fix the message timeout
