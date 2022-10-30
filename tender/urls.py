@@ -24,8 +24,4 @@ urlpatterns = [
     path('api/registrant/', all_registrants_api, name='all_registrants_api'),
     path('api/registrant/<int:id>/', one_registrant_api, name='one_registrant_api'),
     path('api/registrant/choose/<int:id>/', choose_registrant_api, name='choose_registrant_api'),
-<<<<<<< HEAD
-=======
-    path('api/item/', item_api, name='item_api'),
->>>>>>> f3f435f (Push new features)
 ]
