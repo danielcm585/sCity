@@ -1,5 +1,7 @@
 # sCity
 
+![deskripsi](https://github.com/danielcm585/sCity/actions/workflows/dpl.yml/badge.svg)
+
 ## Kelompok E08 
 1. Daniel Christian Mandolang (2106630006)
 2. Dylan Adiprawira (2106750446)
