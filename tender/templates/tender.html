@@ -24,10 +24,6 @@
             <input type="text" name="title" class="form-control w-full rounded-lg">
             <p class="mt-4">Description</p>
             <textarea name="description" class="form-control w-full rounded-lg"></textarea>
-            <form id="new-project-image-form" encType="multipart/form-data">
-              {% csrf_token %}
-              {{ image_form.as_p }}
-            </form>
           </div>
           <div class="flex justify-between">
             <div></div>
