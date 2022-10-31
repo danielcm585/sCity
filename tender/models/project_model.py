@@ -1,10 +1,11 @@
 from django.db import models
+from tender.models.image_model import Image
 
 class Project(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
-    photo = models.URLField(null=True, blank=True)
+    photo = models.ForeignKey(Image, on_delete=models.CASCADE, null=True)
     is_closed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)

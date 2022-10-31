@@ -3,6 +3,7 @@ from tender.views.general_view import *
 from tender.views.company_view import *
 from tender.views.project_view import *
 from tender.views.registrant_view import *
+from tender.views.image_view import *
 
 app_name = 'tender'
 
@@ -24,4 +25,6 @@ urlpatterns = [
     path('api/registrant/', all_registrants_api, name='all_registrants_api'),
     path('api/registrant/<int:id>/', one_registrant_api, name='one_registrant_api'),
     path('api/registrant/choose/<int:id>/', choose_registrant_api, name='choose_registrant_api'),
+    path('api/image/', new_image, name='new_image'),
+    path('api/image/<int:id>', one_image, name='one_image'),
 ]
