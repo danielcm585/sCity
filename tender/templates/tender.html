@@ -18,21 +18,27 @@
     <div class="p-4 w-full flex justify-center">
       <form id="new-project-form" class="w-full">
         {% csrf_token %}
-        <div class="w-full">
-          <p>Title</p>
-          <input type="text" name="title" class="form-control w-full rounded-lg">
-          <p class="mt-4">Description</p>
-          <textarea name="description" class="form-control w-full rounded-lg"></textarea>
-        </div>
-        <div class="flex justify-between">
-          <div></div>
-          <div class="flex">
-            <button type="button" class="new-project-close-button mt-4 bg-gray-200 px-4 py-2 rounded-lg shadow-md hover:bg-gray-400 duration-300">
-              Cancel
-            </button>
-            <button type="submit" class="ml-2 mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
-              Save
-            </button>
+        <div>
+          <div class="w-full">
+            <p>Title</p>
+            <input type="text" name="title" class="form-control w-full rounded-lg">
+            <p class="mt-4">Description</p>
+            <textarea name="description" class="form-control w-full rounded-lg"></textarea>
+            <form id="new-project-image-form" encType="multipart/form-data">
+              {% csrf_token %}
+              {{ image_form.as_p }}
+            </form>
+          </div>
+          <div class="flex justify-between">
+            <div></div>
+            <div class="flex">
+              <button type="button" class="new-project-close-button mt-4 bg-gray-200 px-4 py-2 rounded-lg shadow-md hover:bg-gray-400 duration-300">
+                Cancel
+              </button>
+              <button type="submit" class="ml-2 mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300">
+                Save
+              </button>
+            </div>
           </div>
         </div>
       </form>
