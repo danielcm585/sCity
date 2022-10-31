@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tender.models.image_model import Image
 
 class Company(models.Model):
     id = models.AutoField(primary_key=True)
