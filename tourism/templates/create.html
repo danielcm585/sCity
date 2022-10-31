@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+{% endblock meta %} {% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>{{form.as_table}}</table>
+    <button type=“submit”>Enter</button>
+</form>
+{% endblock content %}
