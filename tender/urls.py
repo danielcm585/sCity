@@ -1,6 +1,4 @@
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
 from tender.views.general_view import *
 from tender.views.company_view import *
 from tender.views.project_view import *
@@ -30,6 +28,3 @@ urlpatterns = [
     path('api/image/', new_image, name='new_image'),
     path('api/image/<int:id>', one_image, name='one_image'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
