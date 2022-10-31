@@ -4,12 +4,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from tender.models.project_model import Project
 from tender.models.registrant_model import Registrant
+from tender.forms.image_form import ImageForm
 from tender.serializers.project_serializer import ProjectSerializer
 from tender.serializers.registrant_serializer import RegistrantSerializer
 
 def dashboard(request):
+    image_form = ImageForm()
     context = {
-        'last_login': request.COOKIES.get('last_login')
+        'last_login': request.COOKIES.get('last_login'),
+        'image_form': image_form
     }
     return render(request, "tender.html", context)
 
