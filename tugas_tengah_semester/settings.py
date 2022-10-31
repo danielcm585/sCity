@@ -59,7 +59,7 @@ INTERNAL_IPS = [
 
 # Windows: Change with your npm bin path
 # Mac/Linux: Turn it off
-NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
+# NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

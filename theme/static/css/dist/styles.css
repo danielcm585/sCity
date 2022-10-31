@@ -1147,6 +1147,7 @@ select {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1155,16 +1156,16 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 >>>>>>> e7c860c (Fix button)
+=======
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+>>>>>>> 6ba1902 (Test image)
 }
 
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1252,6 +1253,7 @@ select {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1262,6 +1264,8 @@ select {
 >>>>>>> e7c860c (Fix button)
 }
 
+=======
+>>>>>>> 6ba1902 (Test image)
 .font-extrabold {
   font-weight: 800;
 }
@@ -1316,11 +1320,14 @@ select {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> 6ba1902 (Test image)
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1391,6 +1398,7 @@ select {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .hover\:bg-gray-500:hover {
   --tw-bg-opacity: 1;
@@ -1398,6 +1406,8 @@ select {
 }
 
 >>>>>>> e7c860c (Fix button)
+=======
+>>>>>>> 6ba1902 (Test image)
 .hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
@@ -1411,11 +1421,6 @@ select {
 .hover\:text-emerald-600:hover {
   --tw-text-opacity: 1;
   color: rgb(5 150 105 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {

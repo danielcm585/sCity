@@ -1,4 +1,5 @@
 from django.db import models
+from tender.models.image_model import Image
 
 class Project(models.Model):
     id = models.AutoField(primary_key=True)
