@@ -10,4 +10,4 @@ class Items(models.Model):
     description = models.TextField()
     price = models.BigIntegerField()
     contact_name = models.CharField(max_length=255)
-    contact_number = models.TextField()
+    contact_number = models.CharField(max_length=255)

@@ -74,3 +74,4 @@ def add_item(request):
         return JsonResponse(result)    
     return HttpResponseBadRequest()
 
+
