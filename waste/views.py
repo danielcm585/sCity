@@ -49,7 +49,6 @@ def update_waste(request, id):
         if request.method == 'POST':
             waste = Waste.objects.get(pk=id)
             waste.is_confirm = True
-            print(waste)
             waste.save()
             return HttpResponse(b"UPDATED", status=201)
         return HttpResponseNotFound()
