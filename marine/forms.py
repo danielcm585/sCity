@@ -5,4 +5,4 @@ from marine.models import Items
 class AdminForm(ModelForm):
     class Meta:
         model = Items
-        fields = '__all__'
+        fields = ["title", "description", "photo", "price", "contact_name", "contact_number"]
