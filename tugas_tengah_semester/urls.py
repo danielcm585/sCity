@@ -13,8 +13,10 @@ urlpatterns = [
     path("", include("home.urls")),
     path("authentication/", include("authentication.urls")),
     path("tender/", include("tender.urls")),
+    path("healthcare/", include("healthcare.urls")),
     path("marine/", include("marine.urls")),
     path("tourism/", include("tourism.urls")),
     path("waste/", include("waste.urls")),
+    path("agriculture/", include("agriculture.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
