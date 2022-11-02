@@ -1,7 +1,6 @@
 from django.urls import path
 from tender.views.general_view import *
 from tender.views.company_view import *
-from tender.views.item_view import *
 from tender.views.project_view import *
 from tender.views.registrant_view import *
 
@@ -24,5 +23,5 @@ urlpatterns = [
     path('api/project/<int:id>/', one_project_api, name='one_project_api'),
     path('api/registrant/', all_registrants_api, name='all_registrants_api'),
     path('api/registrant/<int:id>/', one_registrant_api, name='one_registrant_api'),
-    path('api/item/', item_api, name='item_api'),
+    path('api/registrant/choose/<int:id>/', choose_registrant_api, name='choose_registrant_api'),
 ]

@@ -1,6 +1,8 @@
 # sCity
 
-## kelompok E08 
+![deskripsi](https://github.com/danielcm585/sCity/actions/workflows/dpl.yml/badge.svg)
+
+## Kelompok E08 
 1. Daniel Christian Mandolang (2106630006)
 2. Dylan Adiprawira (2106750446)
 3. Jessica Lambok (2106654883)
@@ -27,9 +29,8 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 - State revenue budget monitor and tender management system - Daniel Christian Mandolang
     
     There will be 3 roles in this app:
-    1. Government (admin) will create projects' tender
-    2. Users can view all open and closed tenders
-    3. Companies can register and make their tender to ongoing projects.
+    1. Government (admin) can create projects
+    2. Users can create companies and create tenders to some projects
     
     By using this platform, we can develop a transparent state revenue budget allocation.
 
@@ -41,7 +42,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
     Ketika user berhasil membeli tiket sesuai dengan tempat yang dituju, aplikasi akan menghasilkan kode tiket (dalam bentuk barcode).
 
-- Waste bank management system - Muhammad Adryna Haska Putra
+- Waste bank management system - Muhammad Adryan Haska Putra
 
     Pada Waste bank management system 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
     1. User : Dapat melakukan penyetoran sampah di bank sampah

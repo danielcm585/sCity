@@ -40,7 +40,8 @@ def all_companies_api(request):
                 )
                 new_company_serialized = CompanySerializer(instance=new_company)
                 return Response(new_company_serialized.data, status=status.HTTP_201_CREATED)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+            return Response('Input not valid', status=status.HTTP_400_BAD_REQUEST)
+        return Response('You must be logged in', status=status.HTTP_401_UNAUTHORIZED)
 
     if (request.method == 'GET'): return get()
     elif (request.method == 'POST'): return post()

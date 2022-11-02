@@ -859,8 +859,8 @@ select {
   margin-right: -0.75rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mr-2 {
@@ -869,10 +869,6 @@ select {
 
 .mr-3 {
   margin-right: 0.75rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .ml-2 {
@@ -941,6 +937,10 @@ select {
 
 .mt-12 {
   margin-top: 3rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-28 {
@@ -1400,11 +1400,6 @@ select {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.text-emerald-400 {
-  --tw-text-opacity: 1;
-  color: rgb(52 211 153 / var(--tw-text-opacity));
-}
-
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -1418,6 +1413,11 @@ select {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-emerald-400 {
+  --tw-text-opacity: 1;
+  color: rgb(52 211 153 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -1466,12 +1466,12 @@ select {
   transition-duration: 150ms;
 }
 
-.duration-500 {
-  transition-duration: 500ms;
-}
-
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .ease-in-out {
@@ -1504,14 +1504,14 @@ select {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.hover\:text-emerald-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(5 150 105 / var(--tw-text-opacity));
-}
-
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.hover\:text-emerald-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(5 150 105 / var(--tw-text-opacity));
 }
 
 .hover\:text-red-600:hover {
