@@ -17,8 +17,11 @@ def login_user(request):
             response.set_cookie("last_login", str(datetime.datetime.now()))
             return response
         else:
-            messages.error(request, "Username atau Password salah!")
-    context = {}
+            messages.error(request, "Username atau Password salah")
+
+    context = {
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "login.html", context)
 
 def register_user(request):
@@ -28,10 +31,14 @@ def register_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Akun telah berhasil dibuat!")
+            messages.success(request, "Akun telah berhasil dibuat")
             return redirect("authentication:login")
     
-    context = { "form": form }
+    print(request)
+    context = { 
+        "form": form,
+        'last_login': request.COOKIES.get('last_login')
+    }
     return render(request, "register.html", context)
 
 def logout_user(request):
