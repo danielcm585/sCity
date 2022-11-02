@@ -49,6 +49,7 @@ $(document).ready(function () {
               addCard(res)
               $('#title').val('')
               $('#description').val('')
+              $('#photo_url').val('')
               $('#contact_number').val('')
               $('#contact_name').val('')
               $('#price').val('')
