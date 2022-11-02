@@ -2,12 +2,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{% static 'waste.js' %}"></script>
 <style>
+  .box:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
   @media screen and (max-width: 450px) {
       .text-3xl{
           font-size: 1.5rem;
       }
       .text-2xl{
           font-size: 1rem;
+      }
+      .text-xl{
+        font-size: 0.7rem;
       }
       p{
           font-size: 10px;
@@ -24,6 +30,9 @@
       }
       .text-2xl{
           font-size: 0.7rem;
+      }
+      .text-xl{
+        font-size: 0.5rem;
       }
       p{
           font-size: 6px;
@@ -98,19 +107,19 @@
       </button>
     </div>
     <div class="p-4 w-full justify-center">
-      <p><b>Price list:</b></p>
+      <p><b>Price list ( /Kg):</b></p>
       <ul>
         <li>Plastic : Rp.3,000.00</li>
-        <li>Metal   : Rp.4,000.00</li>
-        <li>Paper   : Rp.2,000.00</li>
-        <li>Glass   : Rp.1,000.00</li>
+        <li>Metal &nbsp;&nbsp;: Rp.4,000.00</li>
+        <li>Paper &nbsp;&nbsp;: Rp.2,000.00</li>
+        <li>Glass &nbsp;&nbsp;: Rp.1,000.00</li>
       </ul>
     </div>
     <form id="new-waste-form">
       {% csrf_token %}
       <div class="p-4 w-full justify-center">
         <label
-          class="font-bold block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          class="font-bold block mb-2 text-sm font-medium"
           >Type</label
         >
         <div class="flex">
@@ -128,7 +137,7 @@
       </div>
       <div class="p-4 w-full justify-center">
         <label
-          class="font-bold block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          class="font-bold block mb-2 text-sm font-medium"
           >Weight (Kg)</label
         >
         <div class="flex">

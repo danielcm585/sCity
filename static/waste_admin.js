@@ -5,7 +5,7 @@ function show(data) {
         let color = data[i].fields.is_confirm ? "green" : "red";
         content += `
               <br />
-              <div id="${data[i].pk}" class="p-10 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+              <div id="${data[i].pk}" class="box p-10 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                   <h5 class="p-4 mb-2 text-2xl font-bold tracking-tight text-gray-900">${data[i].fields.username
             }</h5>
                   <p  class="px-4 mb-3 font-normal text-700"><b>date: </b>${data[i].fields.date
