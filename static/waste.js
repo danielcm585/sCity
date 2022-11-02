@@ -15,7 +15,7 @@ function show(data) {
               <div class="box p-10 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                   <h5 class="p-4 mb-2 text-2xl font-bold tracking-tight text-gray-900">${data[i].fields.waste_type
             }</h5>
-                  <p class="px-4 mb-3 font-normal text-700">date: ${data[i].fields.date
+                  <p class="px-4 mb-3 font-normal text-700"><b>date: </b>${data[i].fields.date
             }</p>
                   <p  class="text-right px-4 mb-3 font-normal text-700"><b>Weight: </b>${data[i].fields.weight
             } Kg</p>
