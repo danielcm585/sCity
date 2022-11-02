@@ -1,0 +1,162 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'waste.js' %}"></script>
+<style>
+  .box:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
+  @media screen and (max-width: 450px) {
+      .text-3xl{
+          font-size: 1.5rem;
+      }
+      .text-2xl{
+          font-size: 1rem;
+      }
+      .text-xl{
+        font-size: 0.7rem;
+      }
+      p{
+          font-size: 10px;
+      }
+      .p-4{
+          padding-top: 5px;
+          padding-bottom:5px;
+          padding-left:5px;
+          padding-right:5px;
+  }
+  @media screen and (max-width: 330px) {
+      .text-3xl{
+          font-size: 1rem;
+      }
+      .text-2xl{
+          font-size: 0.7rem;
+      }
+      .text-xl{
+        font-size: 0.5rem;
+      }
+      p{
+          font-size: 6px;
+      }
+      button.py-4 {
+          padding-top: 2px;
+          padding-bottom:2px;
+      }
+      button.px-4 {
+          padding-left:2px;
+          padding-right:2px;
+      }
+  }
+</style>
+
+{% endblock meta %} {% block content %}
+
+<h1 class="flex justify-center p-4 text-3xl font-bold">
+  <span id="username">{{user}}</span>'&nbsp; Waste Bank
+</h1>
+<div class="flex justify-center p-4 text-3xl font-bold">
+  <div class="total"></div>
+</div>
+<br />
+<div class="flex justify-center">
+  <div class="content" style="width: 50%"></div>
+</div>
+<div class="flex justify-center">
+  <button
+    class="mt-4 bg-emerald-400 px-4 py-4 rounded-lg shadow-md text-white hover:bg-emerald-600 font-extrabold text-2xl"
+    style="width: 15%"
+    onclick="addModal()"
+  >
+    Add
+  </button>
+</div>
+
+<!-- Main modal -->
+
+<div
+  id="new-waste-modal"
+  class="hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50"
+>
+  <div
+    class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 bg-white rounded-lg"
+  >
+    <div
+      class="flex justify-between items-center border-b-2 border-gray-300 p-4"
+    >
+      <h1 class="text-xl font-bold">Add Waste</h1>
+      <button
+        id="new-project-close-button"
+        type="button"
+        class="bg-white rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-inset focus:ring-indigo-500"
+        onclick="removeModal()"
+      >
+        <svg
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="p-4 w-full justify-center">
+      <p><b>Price list ( /Kg):</b></p>
+      <ul>
+        <li>Plastic : Rp.3,000.00</li>
+        <li>Metal &nbsp;&nbsp;: Rp.4,000.00</li>
+        <li>Paper &nbsp;&nbsp;: Rp.2,000.00</li>
+        <li>Glass &nbsp;&nbsp;: Rp.1,000.00</li>
+      </ul>
+    </div>
+    <form id="new-waste-form">
+      {% csrf_token %}
+      <div class="p-4 w-full justify-center">
+        <label
+          class="font-bold block mb-2 text-sm font-medium"
+          >Type</label
+        >
+        <div class="flex">
+          <select
+            type="text"
+            name="waste_type"
+            class="form-control w-full rounded-lg"
+          >
+            <option value="Plastic">Plastic</option>
+            <option value="Metal">Metal</option>
+            <option value="Paper">Paper</option>
+            <option value="Glass">Glass</option>
+          </select>
+        </div>
+      </div>
+      <div class="p-4 w-full justify-center">
+        <label
+          class="font-bold block mb-2 text-sm font-medium"
+          >Weight (Kg)</label
+        >
+        <div class="flex">
+          <input
+            type="number"
+            name="weight"
+            class="form-control w-full rounded-lg"
+          />
+        </div>
+      </div>
+      <div class="p-4 w-full justify-center">
+        <button
+          type="submit"
+          class="mt-4 bg-emerald-400 px-4 py-2 rounded-lg shadow-md text-white hover:bg-emerald-600 duration-300"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

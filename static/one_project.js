@@ -174,6 +174,23 @@ $(document).ready(() => {
                 Registration success
               </div>
             </div>
+            ${
+              project.is_closed ? (
+                registrant.is_chosen ? `
+                  <p class="p-2 rounded-lg bg-emerald-400 text-xs text-white text-center">
+                    CHOSEN
+                  </p>
+                ` : `
+                  <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-gray-400 text-xs text-white hover:bg-gray-600 duration-300" disabled>
+                    CHOOSE
+                  </button>
+                `
+              ) : `
+                <button id="choose-registrant-${registrant.id}" class="p-2 w-full rounded-lg bg-emerald-400 text-xs text-white hover:bg-emerald-600 duration-300">
+                  CHOOSE
+                </button>
+              `
+            }
           </div>
         `)
         setTimeout(() => {

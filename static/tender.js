@@ -181,23 +181,24 @@ $(document).ready(() => {
       error: (err) => {
         $('#new-company-modal').addClass('hidden')
         $('#message-container').html(`
-          <div id="js-message" class="absolute top-16 right-4">
-            <div class="mt-4 ml-2 flex w-70 bg-red-500 items-center rounded-lg border-l-4 border-red-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
-              <div class="text-red-500 rounded-full bg-white mr-3">
-                <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
-                  <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
-                </svg>
-              </div>
-              <div class="text-white max-w-xs mr-2">
-                ${err.responseJSON}
-              </div>
-            </div>
-          </div>
+        <div id="js-message" class="absolute top-16 right-4">
+        <div class="mt-4 ml-2 flex w-70 bg-red-500 items-center rounded-lg border-l-4 border-red-700 py-2 px-3 shadow-md transition ease-in-out hover:scale-110">
+        <div class="text-red-500 rounded-full bg-white mr-3">
+        <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+        <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+        </svg>
+        </div>
+        <div class="text-white max-w-xs mr-2">
+        ${err.responseJSON}
+        </div>
+        </div>
+        </div>
         `)
         setTimeout(() => {
           $('#js-message').fadeOut('slow');
         }, 4000)
+        alert('GAGAL')
       }
     })
   })
