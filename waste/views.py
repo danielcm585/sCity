@@ -48,7 +48,7 @@ def update_waste(request, id):
     if request.user.is_superuser:
         if request.method == 'POST':
             waste = Waste.objects.get(pk=id)
-            waste.is_confirm = True
+            waste.is_confirm = not waste.is_confirm
             waste.save()
             return HttpResponse(b"UPDATED", status=201)
         return HttpResponseNotFound()
