@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'authentication',
     'tender',
+    'marine'
     'tourism',
     'waste',
 ]
@@ -60,7 +61,7 @@ INTERNAL_IPS = [
 
 # Windows: Change with your npm bin path
 # Mac/Linux: Turn it off
-# NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
+NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,6 +147,8 @@ USE_I18N = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
