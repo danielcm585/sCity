@@ -4,70 +4,8 @@
 {% block content %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      const card = (data) => `
-        
-      <a href="/marine/single/${data.pk}/" class="group">
-        <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-          <img src="${data.fields.photo_url}" alt="${data.fields.description}." class="h-full w-full object-cover object-center group-hover:opacity-75">
-        </div>
-        <h3 class="mt-4 text-sm text-gray-700">${data.fields.title}</h3>
-        <p class="mt-1 text-lg font-medium text-gray-900">$${data.fields.price}</p>
-      </a>
-        `
-      const addCard = (data) => {
-        return $('#items').append(card(data))
-      }
-
-      const removeCard = (item) => {
-        $(`#${item.pk}`).click(function () {
-          $.ajax({
-            url: `/marine/delete/${item.pk}`,
-            type: 'DELETE',
-            success: function (response) {
-              $(`#${item.pk}-card`).remove()
-            },
-          })
-        })
-      }
-
-      $.get('/marine/json', function (todo) {
-        todo.map((task) => {
-          addCard(task)
-          removeCard(task)
-        })
-      })
-
-      $('#add-item').click(function () {
-        if ($('#title').val() && $('#description').val() && $('#photo').val() && $('#price').val() && $('#contact_name').val() && $('#contact_number').val()) {
-          $.post(
-            '/marine/add/',
-            {
-              photo: $('#photo').val(),
-              title: $('#title').val(),
-              description: $('#description').val(),
-              price: $('#price').val(),
-              contact_name: $('#contact_name').val(),
-              contact_number: $('#contact_number').val(),
-            },
-            function (res, status) {
-              if (status == 'success') {
-                addCard(res)
-                $('#title').val('')
-                $('#description').val('')
-                $('#contact_number').val('')
-                $('#contact_name').val('')
-                $('#price').val('')
-                removeCard(res)
-                console.log("kontol")
-              }
-            },
-          )
-        }
-      })
-    })
-  </script>
+<script src="{%static 'js/admin.js' %}" defer></script>
+  
 <div class="bg-white">
   <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
     <h2 class="sr-only">Items</h2>
@@ -80,7 +18,6 @@
           </label>
           {{form.title}}
           <!-- <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"> -->
-          <p class="text-red-500 text-xs italic">Please fill out this field.</p>
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -97,7 +34,6 @@
           </label>
           {{form.contact_name}}
           <!-- <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"> -->
-          <p class="text-red-500 text-xs italic">Please fill out this field.</p>
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -114,7 +50,6 @@
           </label>
           {{form.description}}
           <!-- <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"> -->
-          <p class="text-red-500 text-xs italic">Please fill out this field.</p>
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">

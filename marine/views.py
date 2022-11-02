@@ -8,45 +8,78 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.db.models.fields.files import ImageFieldFile
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+#request.user.is_authenticated
+#request.user.is_superuser
+@login_required(login_url='/authentication/login/')
 def marine_home(request):
     data = Items.objects.all()
+    if request.user.is_authenticated and request.user.is_superuser:
+        data = Items.objects.all()
+        form = AdminForm()
+        if request.method == "POST":
+            form = AdminForm(request.POST, request.FILES )
+            if form.is_valid():
+                form.save()
+
+
+        for item in data:
+            # if item:
+            #     item.delete()
+            if isinstance(item.photo, ImageFieldFile):
+                item.photo_url = str(item.photo.url)
+            item.save()
+
+        context = {
+            'last_login': request.COOKIES.get('last_login'),
+            'items_data': data,
+            'form': form,
+            'user': request.user,
+        }
+        return render(request, "admin_view.html", context)
+        
+
     context = {
+        'last_login': request.COOKIES.get('last_login'),
         'items_data': data,
+        'user': request.user,
     }
     return render(request, "marine_home.html", context)
 
-def admin_view(request):
-    data = Items.objects.all()
-    form = AdminForm()
-    if request.method == "POST":
-        form = AdminForm(request.POST, request.FILES )
-        if form.is_valid():
-            form.save()
-            print(form.data)
+# def admin_view(request):
+#     data = Items.objects.all()
+#     form = AdminForm()
+#     if request.method == "POST":
+#         form = AdminForm(request.POST, request.FILES )
+#         if form.is_valid():
+#             form.save()
+#             print(form.data)
 
 
-    for item in data:
-        # if item:
-        #     item.delete()
-        if isinstance(item.photo, ImageFieldFile):
-            item.photo_url = str(item.photo.url)
-        item.save()
+#     for item in data:
+#         # if item:
+#         #     item.delete()
+#         if isinstance(item.photo, ImageFieldFile):
+#             item.photo_url = str(item.photo.url)
+#         item.save()
 
-    context = {
-        'items_data': data,
-        'form': form,
-    }
-    return render(request, "admin_view.html", context)
+#     context = {
+#         'last_login': request.COOKIES.get('last_login'),
+#         'items_data': data,
+#         'form': form,
+#     }
+#     return render(request, "admin_view.html", context)
 
 def delete(request, pk):
     item = Items.objects.get(id=pk)
     if item:
         item.delete()
-        return redirect('marine:admin_view')
+        return redirect('marine:marine_home')
         
     messages.error(request, 'Error! Tidak dapat menghapus task')
-    return redirect('marine:admin_view')
+    return redirect('marine:marine_home')
 
 def show_json(request):
     data = Items.objects.all()
@@ -79,6 +112,8 @@ def add_item(request):
 def single_view(request, pk):
     data = Items.objects.get(id= pk)
     context = {
+        'last_login': request.COOKIES.get('last_login'),
         'item': data,
+        'user': request.user,
     }
     return render(request, "single_view.html", context)

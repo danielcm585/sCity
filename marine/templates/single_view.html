@@ -13,9 +13,11 @@
           <p>Contact name: {{item.contact_name}}</p>
           <p>Contact number: {{item.contact_number}}</p>
           <div class="flex">
-            <span class="title-font font-medium text-2xl text-gray-900">${{item.price}}</span>
+            <span class="title-font font-medium text-2xl text-gray-900">Rp{{item.price}}</span>
           </div>
+          {% if user.is_superuser %}
           <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"><a href="{% url 'marine:delete' item.pk %}">Delete item</a></button>
+          {% endif %}
         </div>
       </div>
     </div>
