@@ -4,7 +4,7 @@ from .models import Place
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import  HttpResponseNotFound
+from django.http import  HttpResponseNotFound, JsonResponse
 
 
 # Create your views here.
@@ -46,8 +46,11 @@ def add_tourism(request):
 
 @login_required(login_url='/authentication/login/')
 def add_visitor(request, id):
+    response = {}
     if request.method == 'GET':
         place = Place.objects.get(pk=id)
         place.visitor = place.visitor + 1
         place.save()
-        return redirect('/tourism')
+        response['visitor'] = place.visitor
+        return JsonResponse(response)
+

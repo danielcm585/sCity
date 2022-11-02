@@ -4,7 +4,19 @@
 
 <div class="flex justify-center">
 <div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+<script>
+  function addTicket(id) {
+    $.ajax({
+      url: `./add_visitor/${id}`,
+      datatype: `json`,
+      success: function(data) {
+        $(`#visitor${id}`).html(`total visitor : ${data.visitor}`);
+      },
+    });
+  }
+</script>
   {% for place in place %}
   <br />
   <div class="max-w-sm rounded overflow-hidden shadow-lg">
@@ -18,9 +30,9 @@
     <div class="px-6 pt-4 pb-2">
       <span style="background-color: rgb(171, 214, 171);" class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Price : Rp.{{place.price}},00
       </span>
-      <span style="background-color: rgb(148, 148, 193);" class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">total visitor : {{place.visitor}}
+      <span id="visitor{{place.id}}" style="background-color: rgb(148, 148, 193);" class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">total visitor : {{place.visitor}}
       </span>
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><a href="add_visitor/{{place.id}}">+ buy ticket</a>
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><a onclick="addTicket('{{place.id}}');" href="#" >+ buy ticket</a>
       </span>
       
     </div>
