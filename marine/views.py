@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import *
 from marine.models import *
 from django.contrib import messages
@@ -22,6 +23,7 @@ def admin_view(request):
         form = AdminForm(request.POST, request.FILES )
         if form.is_valid():
             form.save()
+            print(form.data)
 
 
     for item in data:
@@ -74,4 +76,9 @@ def add_item(request):
         return JsonResponse(result)    
     return HttpResponseBadRequest()
 
-
+def single_view(request, pk):
+    data = Items.objects.get(id= pk)
+    context = {
+        'item': data,
+    }
+    return render(request, "single_view.html", context)
