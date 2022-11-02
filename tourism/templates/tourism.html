@@ -2,9 +2,13 @@
 
 {% block content %}
 
-{% for place in place %}
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg" alt="Sunset in the mountains">
+<div class="flex justify-center">
+<div>
+
+  {% for place in place %}
+  <br />
+  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <img class="w-full" src="{{place.image}}" alt="Sunset in the mountains">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">{{place.name}}</div>
       <p class="text-gray-700 text-base">
@@ -12,14 +16,18 @@
       </p>
     </div>
     <div class="px-6 pt-4 pb-2">
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{place.price}}
-    </span>
+      <span style="background-color: rgb(171, 214, 171);" class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Price : Rp.{{place.price}},00
+      </span>
+      <span style="background-color: rgb(148, 148, 193);" class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">total visitor : {{place.visitor}}
+      </span>
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><a href="add_visitor/{{place.id}}">+ buy ticket</a>
+      </span>
       
     </div>
   </div>
-  
-  
-{% endfor %}
+  {% endfor %}
+</div>
+</div>
 
 
 

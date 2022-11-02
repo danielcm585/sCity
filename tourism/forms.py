@@ -4,4 +4,4 @@ from .models import Place
 class PlaceForm(ModelForm):
     class Meta:
         model = Place
-        fields = ['name','description','price']
+        fields = ['image','name','description','price']
