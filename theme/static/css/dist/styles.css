@@ -922,6 +922,10 @@ select {
   margin-top: 7rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1103,11 +1107,6 @@ select {
   border-color: rgb(52 211 153 / var(--tw-border-opacity));
 }
 
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1147,21 +1146,9 @@ select {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-=======
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
->>>>>>> e7c860c (Fix button)
-=======
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
->>>>>>> 6ba1902 (Test image)
 }
 
 .bg-gray-50 {
@@ -1253,17 +1240,11 @@ select {
   line-height: 2rem;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
->>>>>>> e7c860c (Fix button)
-=======
->>>>>>> 6ba1902 (Test image)
 .font-extrabold {
   font-weight: 800;
 }
@@ -1274,6 +1255,10 @@ select {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .leading-normal {
@@ -1312,6 +1297,11 @@ select {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -1383,35 +1373,9 @@ select {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.hover\:bg-red-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-=======
-=======
->>>>>>> e7c860c (Fix button)
-.hover\:bg-gray-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-
-<<<<<<< HEAD
-=======
->>>>>>> 6ba1902 (Test image)
-=======
->>>>>>> 6ba1902 (Test image)
 .hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
->>>>>>> e7c860c (Fix button)
-=======
-.hover\:bg-gray-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
->>>>>>> e7c860c (Fix button)
 }
 
 .hover\:text-gray-500:hover {
@@ -1424,31 +1388,6 @@ select {
   color: rgb(5 150 105 / var(--tw-text-opacity));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-=======
-.hover\:text-red-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
->>>>>>> e7c860c (Fix button)
-}
-
-=======
->>>>>>> 6ba1902 (Test image)
-=======
-.hover\:text-red-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
->>>>>>> e7c860c (Fix button)
-=======
->>>>>>> 6ba1902 (Test image)
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1465,6 +1404,13 @@ select {
 
 .group:hover .group-hover\:max-w-full {
   max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:text-gray-300 {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 768px) {
