@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+{% endblock meta %} {% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <button id="button" type=“submit”>Enter</button>
+</form>
+
+<script>
+    function create() {
+        fetch("{% url 'tourism:add_tourism' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        })
+        return false
+    }
+    document.getElementById("button").onclick = create
+</script>
+{% endblock content %}

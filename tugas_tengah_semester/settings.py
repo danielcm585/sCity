@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'authentication',
     'tender',
+    'tourism',
     'waste',
 ]
 
