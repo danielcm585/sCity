@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'tourism',
     'waste',
     'agriculture',
-    'healthcare'
+    'Healthcare'
 ]
 
 TAILWIND_APP_NAME = 'theme'

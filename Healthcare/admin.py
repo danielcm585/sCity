@@ -1,4 +1,4 @@
 from django.contrib import admin
-from Healthcare.models import Service
+from Healthcare.models import Healthcare
 # Register your models here.
-admin.site.register(Service)
+admin.site.register(Healthcare)
