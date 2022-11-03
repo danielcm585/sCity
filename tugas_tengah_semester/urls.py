@@ -13,7 +13,7 @@ urlpatterns = [
     path("", include("home.urls")),
     path("authentication/", include("authentication.urls")),
     path("tender/", include("tender.urls")),
-    path("healthcare/", include("healthcare.urls")),
+    path("healthcare/", include("Healthcare.urls")),
     path("marine/", include("marine.urls")),
     path("tourism/", include("tourism.urls")),
     path("waste/", include("waste.urls")),
