@@ -4,7 +4,8 @@ from .models import Place
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import  HttpResponseNotFound, JsonResponse
+from django.http import  HttpResponse, HttpResponseNotFound, JsonResponse
+from django.core import serializers
 
 
 # Create your views here.
@@ -43,6 +44,11 @@ def add_tourism(request):
         }
         return render(request, 'create.html', context)
     HttpResponseNotFound
+
+@login_required(login_url='/authentication/login/')
+def get_tourism_json_admin(request):
+    place = Place.objects.all()
+    return HttpResponse(serializers.serialize('json', place), content_type='application/json')
 
 @login_required(login_url='/authentication/login/')
 def add_visitor(request, id):
