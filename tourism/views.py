@@ -46,7 +46,7 @@ def add_tourism(request):
     HttpResponseNotFound
 
 @login_required(login_url='/authentication/login/')
-def get_tourism_json_admin(request):
+def get_tourism_json(request):
     place = Place.objects.all()
     return HttpResponse(serializers.serialize('json', place), content_type='application/json')
 
