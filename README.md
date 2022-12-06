@@ -42,7 +42,7 @@ Introducing our superapp, sCity. sCity is a web application that allows you to m
 
     Ketika user berhasil membeli tiket sesuai dengan tempat yang dituju, aplikasi akan menghasilkan kode tiket (dalam bentuk barcode).
 
-- Waste bank management system - Muhammad Adryna Haska Putra
+- Waste bank management system - Muhammad Adryan Haska Putra
 
     Pada Waste bank management system 2 jenis pengguna (admin dan user) yang memiliki otoritas yang berbeda.
     1. User : Dapat melakukan penyetoran sampah di bank sampah
