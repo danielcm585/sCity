@@ -1,5 +1,8 @@
+import json
 from django.shortcuts import render
 from django.contrib import messages
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -45,6 +48,26 @@ def all_projects_api(request):
 
     if (request.method == 'GET'): return get()
     elif (request.method == 'POST'): return post()
+
+@csrf_exempt
+def all_projects_v2_api(request):
+    def post():
+        # Create new project (Admin)
+        if (request.user.is_authenticated and request.user.is_superuser):
+            title = request.POST.get('title')
+            description = request.POST.get('description')
+            is_valid = (
+                title != None and len(title) > 0 and 
+                description != None and len(description) > 0
+            )
+            if (is_valid):
+                new_project = Project.objects.create(title=title, description=description)
+                new_project_serialized = ProjectSerializer(instance=new_project)
+                return JsonResponse({'status': 200, 'data': new_project_serialized.data}, status=200)
+            return JsonResponse({'status': 400, 'meessage': 'Input not valid'}, status=400)
+        return JsonResponse({'status': 401, 'message': 'You are not admin'}, status=401)
+
+    if (request.method == 'POST'): return post()
 
 @api_view(['GET','PUT'])
 def one_project_api(request, id):

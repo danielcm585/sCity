@@ -77,3 +77,15 @@ def register_api(request):
                 "message": "Register berhasil"
                 # Insert any extra data if you want to pass data to Flutter
             }, status=200)
+        return JsonResponse({
+            "status": False,
+            "message": "Registrasi gagal"
+        }, status=401)
+
+@csrf_exempt
+def logout_api(request):
+    logout(request)
+    return JsonResponse({
+        'status': True,
+        'message': 'Logout berhasil'
+    })

@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -68,6 +69,41 @@ def one_registrant_api(request, id):
     if (request.method == 'GET'): return get()
     elif (request.method == 'PUT'): return put()
     elif (request.method == 'POST'): return post()
+
+@csrf_exempt
+def one_registrant_v2_api(request, id):
+    def post():
+        # Add new registration to project :id (Company) 
+        # TODO:
+        if (request.user.is_authenticated):
+            form = RegistrantForm(request.POST)
+            if (form.is_valid()):
+                company = form.cleaned_data.get('company')
+                company = Company.objects.get(id=company.id)
+                project = Project.objects.get(id=id)
+                project_serialized = ProjectSerializer(instance=project)
+                if (company != None and project != None):
+                    if (not project.is_closed):
+                        is_registered = False
+                        print(project_serialized.data)
+                        for registrant in project_serialized.data.get('registrants'):
+                            if (registrant.get('company').get('id') == company.id):
+                                is_registered = True
+                        if (not is_registered):
+                            new_registrant = Registrant.objects.create(
+                                project = project,
+                                company = company,
+                                offer_price = form.cleaned_data.get('offer_price')
+                            )
+                            new_registrant_serialized = RegistrantSerializer(instance=new_registrant)
+                            return Response(new_registrant_serialized.data, status=status.HTTP_201_CREATED)
+                        return Response('You have already registered', status=status.HTTP_400_BAD_REQUEST)
+                    return Response('Project is closed', status=status.HTTP_400_BAD_REQUEST)
+                return Response('Company or project not found', status=status.HTTP_400_BAD_REQUEST)
+            return Response('Input invalid', status=status.HTTP_400_BAD_REQUEST)
+        return Response('You are not an admin', status=status.HTTP_401_UNAUTHORIZED)
+
+    if (request.method == 'POST'): return post()
 
 @api_view(['GET'])
 def choose_registrant_api(request, id):
