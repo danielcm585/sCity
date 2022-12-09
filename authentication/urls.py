@@ -9,4 +9,5 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('api/login/', login_api, name='login_api'),
     path('api/register/', register_api, name='register_api'),
+    path('api/logout/', logout_api, name='logout_api'),
 ]

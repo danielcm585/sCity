@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -45,6 +46,27 @@ def all_companies_api(request):
 
     if (request.method == 'GET'): return get()
     elif (request.method == 'POST'): return post()
+
+@csrf_exempt
+def all_companies_v2_api(request):
+    def post():
+        # Create a new company (User)
+        # TODO:
+        if (request.user.is_authenticated):
+            form = CompanyForm(request.POST)
+            if (form.is_valid()):
+                new_company = Company.objects.create(
+                    user = request.user,
+                    company_name = form.cleaned_data.get('company_name'),
+                    pt_name = form.cleaned_data.get('pt_name'),
+                    npwp = form.cleaned_data.get('npwp'),
+                )
+                new_company_serialized = CompanySerializer(instance=new_company)
+                return Response(new_company_serialized.data, status=status.HTTP_201_CREATED)
+            return Response('Input not valid', status=status.HTTP_400_BAD_REQUEST)
+        return Response('You must be logged in', status=status.HTTP_401_UNAUTHORIZED)
+
+    if (request.method == 'POST'): return post()
 
 @api_view(['GET'])
 def my_companies_api(request):
