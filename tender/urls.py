@@ -27,4 +27,5 @@ urlpatterns = [
     path('api/registrant/<int:id>/', one_registrant_api, name='one_registrant_api'),
     path('api/v2/registrant/<int:id>/', one_registrant_v2_api, name='one_registrant_v2_api'),
     path('api/registrant/choose/<int:id>/', choose_registrant_api, name='choose_registrant_api'),
+    path('api/v2/registrant/choose/<int:id>/', choose_registrant_v2_api, name='choose_registrant_v2_api'),
 ]

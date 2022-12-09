@@ -56,14 +56,8 @@ def login_api(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return JsonResponse({
-                "status": True,
-                "message": "Login berhasil"
-            }, status=200)
-        return JsonResponse({
-            "status": False,
-            "message": "User tidak ditemukan"
-        }, status=401)
+            return JsonResponse({"status": True, "message": "Login berhasil"}, status=200)
+        return JsonResponse({"status": False, "message": "User tidak ditemukan atau password salah"}, status=401)
 
 @csrf_exempt
 def register_api(request):
@@ -72,15 +66,8 @@ def register_api(request):
         print(form)
         if form.is_valid():
             form.save()
-            return JsonResponse({
-                "status": True,
-                "message": "Register berhasil"
-                # Insert any extra data if you want to pass data to Flutter
-            }, status=200)
-        return JsonResponse({
-            "status": False,
-            "message": "Registrasi gagal"
-        }, status=401)
+            return JsonResponse({"status": True, "message": "Register berhasil"}, status=200)
+        return JsonResponse({"status": False, "message": "Registrasi gagal"}, status=401)
 
 @csrf_exempt
 def logout_api(request):

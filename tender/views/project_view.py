@@ -63,7 +63,7 @@ def all_projects_v2_api(request):
             if (is_valid):
                 new_project = Project.objects.create(title=title, description=description)
                 new_project_serialized = ProjectSerializer(instance=new_project)
-                return JsonResponse({'status': 200, 'data': new_project_serialized.data}, status=200)
+                return JsonResponse({'status': 201, 'data': new_project_serialized.data}, status=200)
             return JsonResponse({'status': 400, 'meessage': 'Input not valid'}, status=400)
         return JsonResponse({'status': 401, 'message': 'You are not admin'}, status=401)
 
