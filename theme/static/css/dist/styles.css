@@ -922,28 +922,16 @@ select {
   margin-top: 7rem;
 }
 
-
-.mt-40 {
-  margin-top: 10rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
-
 
 .block {
   display: block;
 }
 
-
 .inline-block {
   display: inline-block;
-}
-
-.inline {
-  display: inline;
-
 }
 
 .inline {
