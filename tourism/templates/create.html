@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% load static %} {% block meta %}
+{% extends 'base.html' %} {% load static %} 
+{% block meta %}
 {% endblock meta %} {% block content %}
+
 <form action="" method="POST">
     {% csrf_token %}
     <table>
@@ -7,6 +9,7 @@
     </table>
     <button id="button" type=“submit”>Enter</button>
 </form>
+
 
 <script>
     function create() {

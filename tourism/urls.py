@@ -7,4 +7,5 @@ urlpatterns = [
     path('', show_tourism, name='show_tourism'),
     path('add/', add_tourism, name='add_tourism'),
     path('add_visitor/<int:id>', add_visitor, name='add_visitor'),
+    path('json', get_tourism_json, name='get_tourism_json'),
 ]
