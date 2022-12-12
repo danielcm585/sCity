@@ -10,5 +10,6 @@ urlpatterns = [
     path('delete/<int:pk>/', delete, name='delete'),
     path('json/', show_json, name='show_json'),
     path('add/', add_item, name='add_task'),
-    path('single/<int:pk>/', single_view, name='single_view')
+    path('single/<int:pk>/', single_view, name='single_view'),
+    path('add-flutter/', add_flutter, name='add_flutter'),
 ]
