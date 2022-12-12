@@ -9,6 +9,7 @@ from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.db.models.fields.files import ImageFieldFile
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+import json
 # Create your views here.
 
 #request.user.is_authenticated
@@ -117,3 +118,48 @@ def single_view(request, pk):
         'user': request.user,
     }
     return render(request, "single_view.html", context)
+
+@csrf_exempt
+def add_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+        
+        title = data["title"]
+        description = data["description"]
+        contact_name = data["contact_name"]
+        contact_number = data["contact_number"]
+        price = data["price"]
+        photo_url = data["photo_url"]
+        addItem = Items.objects.create(
+            title = title, 
+            description = description,
+            contact_name = contact_name,
+            contact_number = contact_number, 
+            price = price, 
+            photo_url = photo_url, 
+        )
+        addItem.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
+
+
+@csrf_exempt
+def delete_flutter(request):
+    print("a")
+    data = json.loads(request.body)
+    print()
+    print(data)
+    getTitle = data['title']
+    getName = data['name']
+    getDesc = data['description']
+    getNumber = data["contact_number"]
+    getPrice = data["price"]
+    getUrl = data["photo_url"]
+    
+    Items.objects.get(title=getTitle, name=getName, description=getDesc, contact_number = getNumber,  price = getPrice, photo_url = getUrl).delete()
+    return JsonResponse({"status": "success"}, status=200)
+   
