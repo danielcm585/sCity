@@ -33,7 +33,7 @@ def agriculture_home(request):
             'form': form,
             'user': request.user,
         }
-        return render(request, "admin_view.html", context)
+        return render(request, "admin2_view.html", context)
         
 
     context = {
