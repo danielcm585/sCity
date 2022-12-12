@@ -26,12 +26,6 @@ def marine_home(request):
                 form.save()
 
 
-        for item in data:
-            # if item:
-            #     item.delete()
-            if isinstance(item.photo, ImageFieldFile):
-                item.photo_url = str(item.photo.url)
-            item.save()
 
         context = {
             'last_login': request.COOKIES.get('last_login'),
@@ -83,8 +77,9 @@ def delete(request, pk):
     return redirect('marine:marine_home')
 
 def show_json(request):
-    data = Items.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    data = serializers.serialize('json', Items.objects.all())
+    return HttpResponse(data, content_type="application/json")
+
 
 @csrf_exempt
 def add_item(request):

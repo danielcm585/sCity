@@ -8,6 +8,6 @@ class Items(models.Model):
     photo_url = models.TextField(null=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.BigIntegerField()
+    price = models.TextField()
     contact_name = models.CharField(max_length=255)
     contact_number = models.CharField(max_length=255)
