@@ -83,7 +83,10 @@ def show_json(request):
 
 @csrf_exempt
 def add_item(request):
+    print("ahhahahahah")
     if request.method == 'POST':
+        data = json.loads(request.body)
+        print(data)
         photo = request.POST.get('photo')
         title = request.POST.get('title')
         description = request.POST.get('description')
@@ -117,9 +120,8 @@ def single_view(request, pk):
 @csrf_exempt
 def add_flutter(request):
     if request.method == 'POST':
-        
+        Items.objects.all().delete()
         data = json.loads(request.body)
-        
         title = data["title"]
         description = data["description"]
         contact_name = data["contact_name"]
