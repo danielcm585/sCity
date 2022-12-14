@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'marine',
     'tourism',
     'waste',
+    'agriculture',
+    'Healthcare'
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -147,7 +149,9 @@ USE_I18N = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
@@ -165,5 +169,4 @@ for directory in [*STATICFILES_DIRS, STATIC_ROOT]:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+CSRF_TRUSTED_ORIGINS = [f'https://scity.up.railway.app']
