@@ -9,6 +9,7 @@ from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.db.models.fields.files import ImageFieldFile
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+import json
 # Create your views here.
 
 #request.user.is_authenticated
@@ -58,6 +59,7 @@ def show_json(request):
 @csrf_exempt
 def add_item(request):
     if request.method == 'POST':
+        data = json.loads(request.body)
         photo_url = request.POST.get('photo_url')
         title = request.POST.get('title')
         description = request.POST.get('description')
@@ -87,3 +89,28 @@ def single_view(request, pk):
         'user': request.user,
     }
     return render(request, "single_view.html", context)
+
+@csrf_exempt
+def add_flutter(request):
+    if request.method == 'POST':
+        # Items.objects.all().delete()
+        data = json.loads(request.body)
+        title = data["title"]
+        description = data["description"]
+        contact_name = data["contact_name"]
+        contact_number = data["contact_number"]
+        price = data["price"]
+        photo_url = data["photo_url"]
+        addItem = Items.objects.create(
+            title = title, 
+            description = description,
+            contact_name = contact_name,
+            contact_number = contact_number, 
+            price = price, 
+            photo_url = photo_url, 
+        )
+        addItem.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)

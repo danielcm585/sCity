@@ -120,7 +120,7 @@ def single_view(request, pk):
 @csrf_exempt
 def add_flutter(request):
     if request.method == 'POST':
-        Items.objects.all().delete()
+        # Items.objects.all().delete()
         data = json.loads(request.body)
         title = data["title"]
         description = data["description"]
